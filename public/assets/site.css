@@ -2,3 +2,5 @@
 .crop-stage{display:block;font-size:.8rem;padding:.25rem .45rem;margin:.2rem 0;border-radius:2px}.crop-stage.planting{background:#dbe3eb}.crop-stage.growing{background:#dce8cd}.crop-stage.harvest{background:#315e40;color:white}.table-scroll caption{text-align:left;padding:.5rem;font-weight:600}details summary{cursor:pointer}
 
 .media-thumb,.entry-thumb,.variant-image,.entry-art img{display:block;max-width:100%;height:auto;object-fit:contain}.media-thumb{aspect-ratio:4/3;width:100%}.variant-image{max-height:220px}.entry-art{margin:2rem 0}.entry-art img{max-height:620px}.entry-thumb{max-height:320px}.specimen-art img{aspect-ratio:9/7;object-fit:contain}
+
+html[dir=rtl] body{font-family:Tahoma,Arial,sans-serif}html[dir=rtl] h1,html[dir=rtl] h2,html[dir=rtl] h3{font-family:Tahoma,Arial,sans-serif;letter-spacing:0;line-height:1.4}html[dir=rtl] .eyebrow,html[dir=rtl] .brand{letter-spacing:0}html[dir=rtl] th,html[dir=rtl] td{text-align:right}

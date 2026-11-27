@@ -1,0 +1,5 @@
+@extends('ar.layout')
+@section('title',$p->name_ar.' | فيردليف')
+@section('description',\Illuminate\Support\Str::limit($p->description_ar,150))
+@section('alternate',route('product',$p->slug))
+@section('content')<section class="wrap"><a href="{{route('ar.products')}}">المنتجات</a><div class="product-grid"><figure class="product-art">@if($p->media)<img src="{{route('media.show',$p->media)}}" alt="{{$p->media->alt}}">@else<img src="{{asset('assets/specimen.svg')}}" alt="رسم نباتي توضيحي">@endif</figure><div><h1>{{$p->name_ar}}.</h1><p dir="ltr">{{$p->botanical_name}}</p><p class="prose">{{$p->description_ar}}</p><p>للاطلاع على الأشكال التجارية والمواصفات المتاحة وطلب عرض سعر، انتقل إلى صفحة المنتج باللغة الإنجليزية.</p><a class="primary" href="{{route('product',$p->slug)}}">المواصفات وطلب التوريد (English)</a></div></div></section>@endsection

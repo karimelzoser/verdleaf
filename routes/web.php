@@ -39,4 +39,10 @@ Route::prefix('admin')->middleware('auth')->group(function(){
  Route::post('/content/{contentEntry}',[Admin::class,'editContent'])->name('admin.content.edit');
  Route::post('/requests/{sourcingRequest}',[Admin::class,'status'])->name('admin.status');
 });
+Route::prefix('ar')->name('ar.')->group(function(){
+ Route::get('/',[\App\Http\Controllers\ArabicSite::class,'home'])->name('home');
+ Route::get('/products',[\App\Http\Controllers\ArabicSite::class,'catalogue'])->name('products');
+ Route::get('/products/{slug}',[\App\Http\Controllers\ArabicSite::class,'product'])->name('product');
+ Route::get('/{section}',[\App\Http\Controllers\ArabicSite::class,'section'])->where('section','about|farms|facilities|quality|certifications|exhibitions|visits|responsible-sourcing|contact|insights')->name('section');
+});
 Route::get('/{section}',[PublicSite::class,'section'])->where('section','about|inside-verdleaf|farms|facilities|quality|certifications|crop-calendar|exhibitions|visits|markets|industries|export-services|responsible-sourcing|insights|downloads|how-to-order|contact|privacy')->name('section');
