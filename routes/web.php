@@ -15,12 +15,19 @@ Route::post('/buyer-desk/submit',[BuyerDesk::class,'submit'])->middleware('throt
 Route::get('/buyer-desk/receipt',[BuyerDesk::class,'receipt'])->name('desk.receipt');
 Route::get('/compare',[BuyerDesk::class,'compare'])->name('compare');
 Route::get('/crop-calendar',[\App\Http\Controllers\CropCalendar::class,'index'])->name('calendar');
+Route::get('/media/{asset}',[\App\Http\Controllers\MediaLibrary::class,'show'])->name('media.show');
+Route::get('/enquire/{type}',[\App\Http\Controllers\GeneralEnquiries::class,'index'])->name('enquiry');
+Route::post('/enquire/{type}',[\App\Http\Controllers\GeneralEnquiries::class,'store'])->middleware('throttle:5,1')->name('enquiry.store');
+Route::get('/{section}/{slug}',[PublicSite::class,'entry'])->where('section','exhibitions|visits|insights|certifications|markets|industries|farms|facilities|responsible-sourcing|downloads')->name('entry');
 Route::get('/robots.txt',[PublicSite::class,'robots']);
 Route::get('/sitemap.xml',[PublicSite::class,'sitemap']);
 Route::get('/login',[Admin::class,'login'])->name('login');
 Route::post('/login',[Admin::class,'authenticate'])->middleware('throttle:5,1');
 Route::post('/logout',[Admin::class,'logout'])->middleware('auth')->name('logout');
 Route::prefix('admin')->middleware('auth')->group(function(){
+ Route::get('/media',[\App\Http\Controllers\MediaLibrary::class,'index'])->name('admin.media');
+ Route::post('/media',[\App\Http\Controllers\MediaLibrary::class,'store'])->name('admin.media.store');
+ Route::post('/enquiries/{enquiry}',[\App\Http\Controllers\GeneralEnquiries::class,'status'])->name('admin.enquiry.status');
  Route::get('/',[Admin::class,'index'])->name('admin');
  Route::post('/products',[Admin::class,'createProduct'])->name('admin.product.create');
  Route::get('/products/{product}',[Admin::class,'edit'])->name('admin.product');

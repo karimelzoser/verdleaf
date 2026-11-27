@@ -35,7 +35,8 @@ class PublicSite {
   return view('catalogue',['products'=>$builder->orderBy('name')->paginate(12)->withQueryString(),'categories'=>Product::visible()->distinct()->orderBy('category')->pluck('category'),'mode'=>$mode,'q'=>$q,'category'=>$category,'form'=>$form,'application'=>$application]);
  }
  public function product(string $slug){$product=Product::visible()->where('slug',$slug)->with(['variants'=>fn($q)=>$q->visible()->orderBy('form')])->firstOrFail();return view('product',compact('product'));}
- public function section(string $section){$meta=self::SECTIONS[$section];$entries=ContentEntry::visible()->where('type',$meta[2])->latest('event_date')->latest('id')->get();return view('section',compact('section','meta','entries'));}
+ public function section(string $section){$meta=self::SECTIONS[$section];$entries=ContentEntry::visible()->where('type',$meta[2])->with('media')->latest('event_date')->latest('id')->get();return view('section',compact('section','meta','entries'));}
+ public function entry(string $section,string $slug){$meta=self::SECTIONS[$section];$entry=ContentEntry::visible()->where('type',$meta[2])->where('slug',$slug)->with('media')->firstOrFail();return view('entry',compact('section','meta','entry'));}
  public function robots(){return response(config('verdleaf.preview')?"User-agent: *\nDisallow: /\n":"User-agent: *\nDisallow: /admin\nDisallow: /buyer-desk\nDisallow: /compare\nSitemap: ".url('/sitemap.xml')."\n",200,['Content-Type'=>'text/plain']);}
  public function sitemap(){abort_if(config('verdleaf.preview'),404);$urls=[url('/'),url('/products'),url('/atlas'),url('/ingredient-finder')];foreach(Product::where('status','published')->pluck('slug') as $slug)$urls[]=route('product',$slug);foreach(self::SECTIONS as $slug=>$meta)if(ContentEntry::visible()->where('type',$meta[2])->exists())$urls[]=route('section',$slug);return response()->view('sitemap',compact('urls'),200,['Content-Type'=>'application/xml']);}
 }
