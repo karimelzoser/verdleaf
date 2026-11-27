@@ -1,4 +1,4 @@
-# Creative direction, editorial system and motion
+# Creative direction, editorial system and motion — v2.0
 ## North star
 A digital visit to Verdleaf. The visitor feels the landscape, the people, the ingredient and the precision behind export. Balance an editorial agricultural story with the fast interaction of a sourcing catalogue. Design original page compositions; do not repeat identical feature cards, giant gradients, stock icons or generic SaaS layouts.
 
@@ -8,7 +8,7 @@ Forest #193D2D, ink #25312B, warm ivory #F5F2E9, olive #778B5A, muted gold #B99B
 ## Homepage storyboard
 | Chapter | Composition | Motion | Content/CTA |
 |---|---|---|---|
-| 01 Arrival | Full-bleed actual field film or wide still, modest title left, top nav | 600–800ms headline mask reveal, gentle image scale, no blocking loader | “Egyptian herbs, grown for the world.” / Explore ingredients |
+| 01 Arrival | Full-bleed actual field film or wide still, modest title left, top nav | 600–800ms headline mask reveal, gentle image scale, no blocking loader | “It all begins with the land.” / Explore Verdleaf + Source ingredients |
 | 02 Origins | Asymmetric field image and handwritten-style crop labels | Slow image reveal on entry; no scroll-jacking | Fayoum, approved heritage and company story |
 | 03 Ingredient room | Large product macro photography; category tabs, editorial grid | 220ms crossfade and item focus, touch-friendly | Explore catalogue |
 | 04 Seed to shipment | Six-stage process with real operation images and thin botanical line | Scroll-triggered stage highlights on desktop; stacked mobile | Farms, processing, quality, packing and export |
@@ -26,7 +26,7 @@ Forest #193D2D, ink #25312B, warm ivory #F5F2E9, olive #778B5A, muted gold #B99B
 - Certificate viewer: accessible dialog with document metadata, actual PDF link, close/escape, focus return; expired documents clearly marked and not promoted as current.
 - Exhibition/visit editorial galleries: image captions, dates, previous/next, fullscreen optional; no auto-advance.
 - Quotation basket: selected items persist locally without private customer details; edit/remove quantity, units, form and grade; keyboard-accessible; submission confirmed only on server success.
-- Product comparison (phase 2): compare up to 3 products/variants, highlight differences, export to RFQ.
+- Product comparison (launch): compare up to 3 products/variants, highlight differences, export to RFQ.
 - Language switch retains equivalent page; fallback marked when translation unavailable. RTL motion respects reading direction.
 - Global navigation: accessible mega menu, skip link, escape to close, focus handling, meaningful link labels.
 
@@ -48,3 +48,12 @@ Shoot actual fields at dawn and working day, close-up leaves/flowers, harvesting
 
 ## Visual QA
 Review desktop/tablet/mobile screenshots for every route and key state: empty results, invalid filters, loading/errors, long EN/AR copy, RTL, missing photos, expired certificates, no upcoming events, quote validation, no JS and reduced motion. Validate contrast WCAG AA, keyboard/focus, 44px recommended touch targets, text resizing, screen reader semantics, no clipping/overlap, no horizontal overflow, readable content with animations off. Test real low-end mobile performance. Sign off against storyboard and reference screenshots before release.
+
+## V2 signature identity and experience
+Design motifs derive from Egyptian field geometry and botanical specimens: custom scientific illustration, linework connecting plant parts and agricultural stages, a restrained print-inspired type hierarchy, ingredient-scale macro imagery, original specimen labels and asymmetrical story chapters. Work with actual approved brand assets; no copying other supplier layouts. Product discovery remains practical and fast.
+Homepage: hero with dual entry and visible search; alternating large editorial ingredient features; human grower story; seasonal explorer; guided field-to-shipment narrative; certificate evidence; event and visit journal; Buyer Desk. Real dated Field Notes replace empty news blocks; fallback to relevant permanent content if no current story. No fake real-time status.
+Atlas: illustrated specimen index with categories and botanical names; link to the canonical product detail. Finder: choose intended application, optional form and grade, show approved matches and explain why; no claim of regulatory/health suitability. Zero matches offers custom sourcing.
+Product detail: large form-specific macro image with scale, zoom, side-by-side cut size comparison, accessible variant selectors, specs and documents updated together, public passport and packaging options. Unknown facts omitted. Public passport printable/QR to canonical product URL; no fake lot traceability.
+Buyer Desk: persistent anonymous shortlist, compare up to 3, request quote/sample/technical documents together with per-item intentions, quantities and units; clear review step and server receipt. Expiring share token only non-sensitive selections, no PII. No checkout or mandatory login.
+Inside Verdleaf: choose verified locations on an illustrated route, actual stills/clips with captions and accessible hotspots; no heavy 3D requirement. Optional 360 later. Responsible sourcing uses evidence cards with source/scope/date; no unsupported environmental claims. 
+Motion: native progressive View Transitions where supported; carefully selected GSAP only after performance/license review. Custom SVG line drawing and organic masking, no mandatory motion. See PROTOTYPES.md for screen flows, visual review and fallbacks.
