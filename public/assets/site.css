@@ -6,3 +6,8 @@
 html[dir=rtl] body{font-family:Tahoma,Arial,sans-serif}html[dir=rtl] h1,html[dir=rtl] h2,html[dir=rtl] h3{font-family:Tahoma,Arial,sans-serif;letter-spacing:0;line-height:1.4}html[dir=rtl] .eyebrow,html[dir=rtl] .brand{letter-spacing:0}html[dir=rtl] th,html[dir=rtl] td{text-align:right}
 
 [hidden]{display:none!important}.form-picker,.tour-controls{display:flex;gap:.55rem;flex-wrap:wrap;margin:1rem 0}.form-picker [aria-pressed=true],.tour-controls [aria-pressed=true]{background:var(--forest);color:var(--white)}.tour-panel{padding:2rem;background:#e6e9d9;margin:1.5rem 0;min-height:230px}.entry-facts{display:grid;grid-template-columns:minmax(100px,1fr) 2fr;max-width:760px;gap:1rem}.entry-facts dt{font-weight:600}.entry-facts dd{margin:0;overflow-wrap:anywhere}.hero-art img{aspect-ratio:38/39;object-fit:cover}.variant-panel img{border:1px solid var(--line)}@media(max-width:480px){.entry-facts{grid-template-columns:1fr;gap:.3rem}.entry-facts dd{margin-bottom:1rem}.tour-panel{padding:1.2rem}}
+
+/* Visual-review corrections: compact sourcing cards on small screens, not an oversized retail grid. */
+@media(max-width:480px){.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.05rem}.specimen h3{font-size:1.3rem;overflow-wrap:anywhere}.specimen .eyebrow{font-size:.63rem;letter-spacing:.08em}.specimen .under{font-size:.8rem}.specimen-art img{aspect-ratio:1;object-fit:contain}.filters,.foot{grid-template-columns:1fr}.hero .actions{margin-bottom:.5rem}.wrap{padding-top:2.5rem;padding-bottom:2.5rem}html[dir=rtl] .nav{direction:rtl}html[dir=rtl] .menu{align-items:start}}
+@media(max-width:340px){.cards{grid-template-columns:1fr}}
+.hero-art .hero-video{width:100%;display:block;aspect-ratio:38/39;object-fit:cover;background:#193d2d}
