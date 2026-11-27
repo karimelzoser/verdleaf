@@ -31,6 +31,7 @@ class BuyerDesk {
    foreach($basket as $id=>$item){$v=$variants[$id];$record->items()->create(['variant_id'=>$v->id,'product_name'=>$v->product->name,'form'=>$v->form,'grade'=>$v->grade,'quantity_kg'=>$item['quantity'],'purposes'=>$item['purposes']]);} \App\Models\Notification::firstOrCreate(['reference'=>$record->reference],['kind'=>'sourcing','next_attempt_at'=>now()]);return $record;
   });}catch(\Throwable $e){if($attachment)\Illuminate\Support\Facades\Storage::disk('local')->delete($attachment);throw $e;}
   if($attachment&&$record->attachment_path!==$attachment)\Illuminate\Support\Facades\Storage::disk('local')->delete($attachment);
+  try{\App\Services\Metrics::increment('sourcing_request');}catch(\Throwable $e){report($e);}
   $r->session()->forget(['basket','request_token']);$r->session()->put('receipt',$record->reference);return redirect()->route($r->routeIs('ar.*')?'ar.desk.receipt':'desk.receipt');
  }
  public function receipt(Request $r){abort_unless($reference=$r->session()->get('receipt'),404);return view($r->routeIs('ar.*')?'ar.receipt':'receipt',compact('reference'));}

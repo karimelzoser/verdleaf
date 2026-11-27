@@ -67,4 +67,8 @@ class PlatformTest extends TestCase {
   $sales=User::create(['name'=>'Sales','email'=>'sales@example.test','password'=>'long-test-password','role'=>'sales']);
   $this->actingAs($sales)->get('/staff')->assertOk();$this->get('/admin')->assertForbidden();
  }
+ public function test_arabic_buyer_flow():void{
+  [$p,$v]=$this->sample();$p->update(['name_ar'=>'بابونج','description_ar'=>'وصف تجريبي']);
+  $this->get('/ar/products/chamomile')->assertOk();$this->post('/ar/buyer-desk/items',['variant_id'=>$v->id])->assertRedirect('/ar/buyer-desk');$this->get('/ar/buyer-desk')->assertOk();$this->get('/ar/compare')->assertOk();$this->get('/ar/enquire/visit')->assertOk();
+ }
 }

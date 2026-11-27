@@ -42,6 +42,9 @@ Route::prefix('admin')->middleware('auth')->group(function(){
  Route::get('/documents',[\App\Http\Controllers\PublicDocuments::class,'index'])->name('admin.documents');
  Route::post('/documents',[\App\Http\Controllers\PublicDocuments::class,'store'])->name('admin.documents.store');
  Route::post('/documents/{document}/archive',[\App\Http\Controllers\PublicDocuments::class,'archive'])->name('admin.documents.archive');
+ Route::get('/growth',[\App\Http\Controllers\Growth::class,'index'])->name('admin.growth');
+ Route::post('/redirects',[\App\Http\Controllers\Growth::class,'save'])->name('admin.redirect.save');
+ Route::post('/redirects/{redirect}/remove',[\App\Http\Controllers\Growth::class,'remove'])->name('admin.redirect.remove');
  Route::get('/seo',[Admin::class,'seo'])->name('admin.seo');
  Route::post('/notifications/{notification}/retry',[Admin::class,'retry'])->name('admin.notification.retry');
  Route::get('/media',[\App\Http\Controllers\MediaLibrary::class,'index'])->name('admin.media');
@@ -75,3 +78,5 @@ Route::prefix('ar')->name('ar.')->group(function(){
  Route::get('/{section}',[\App\Http\Controllers\ArabicSite::class,'section'])->where('section','about|farms|facilities|quality|certifications|exhibitions|visits|responsible-sourcing|contact|insights|privacy')->name('section');
 });
 Route::get('/{section}',[PublicSite::class,'section'])->where('section','about|inside-verdleaf|farms|facilities|quality|certifications|crop-calendar|exhibitions|visits|markets|industries|export-services|responsible-sourcing|insights|downloads|how-to-order|contact|privacy')->name('section');
+
+Route::fallback([\App\Http\Controllers\Growth::class,'missing']);
