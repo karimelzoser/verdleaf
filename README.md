@@ -33,3 +33,6 @@ Laravel/PHP + MySQL, server-rendered Blade templates, Vite-built CSS and selecti
 
 ## Status
 Version 2.0 planning and interactive design study. Application implementation, hosting verification and client data approval are separate milestones. No production website is deployed by this commit.
+
+## Application foundation (in development)
+The branch now includes a Laravel PHP/MySQL application. See [implementation status and local setup](docs/IMPLEMENTATION-STATUS.md). The previous standalone design study is preserved. No deployment or completed visual validation yet.

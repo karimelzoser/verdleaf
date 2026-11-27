@@ -14,6 +14,7 @@ Route::post('/buyer-desk/update',[BuyerDesk::class,'update'])->name('desk.update
 Route::post('/buyer-desk/submit',[BuyerDesk::class,'submit'])->middleware('throttle:5,1')->name('desk.submit');
 Route::get('/buyer-desk/receipt',[BuyerDesk::class,'receipt'])->name('desk.receipt');
 Route::get('/compare',[BuyerDesk::class,'compare'])->name('compare');
+Route::get('/crop-calendar',[\App\Http\Controllers\CropCalendar::class,'index'])->name('calendar');
 Route::get('/robots.txt',[PublicSite::class,'robots']);
 Route::get('/sitemap.xml',[PublicSite::class,'sitemap']);
 Route::get('/login',[Admin::class,'login'])->name('login');
@@ -26,6 +27,8 @@ Route::prefix('admin')->middleware('auth')->group(function(){
  Route::post('/products/{product}/variants',[Admin::class,'variant'])->name('admin.variant');
  Route::post('/variants/{variant}',[Admin::class,'saveVariant'])->name('admin.variant.save');
  Route::post('/content',[Admin::class,'content'])->name('admin.content');
+ Route::post('/crop-periods',[\App\Http\Controllers\CropCalendar::class,'save'])->name('admin.crop');
+ Route::post('/content/{contentEntry}',[Admin::class,'editContent'])->name('admin.content.edit');
  Route::post('/requests/{sourcingRequest}',[Admin::class,'status'])->name('admin.status');
 });
 Route::get('/{section}',[PublicSite::class,'section'])->where('section','about|inside-verdleaf|farms|facilities|quality|certifications|crop-calendar|exhibitions|visits|markets|industries|export-services|responsible-sourcing|insights|downloads|how-to-order|contact|privacy')->name('section');
