@@ -1,0 +1,21 @@
+name: Import original Verdleaf media
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/import-verdleaf-media.yml','scripts/import-verdleaf-media.py']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  media:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install requests beautifulsoup4 pillow pymupdf
+      - run: python scripts/import-verdleaf-media.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verdleaf-original-media
+          path: |
+            media/
+            media-manifest.js
