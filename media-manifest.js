@@ -1,0 +1,1 @@
+window.VERDLEAF_MEDIA={products:{},photos:{editorial:{path:"https://verdleaf.com/wp-content/uploads/2024/09/Picture28.webp",source:"https://verdleaf.com/wp-content/uploads/2024/09/Picture28.webp"}}};

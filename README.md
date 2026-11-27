@@ -1,2 +1,2 @@
-# Verdleaf GitHub Pages preview
-Static client-side demonstration only. Actual Laravel/MySQL source: branch design/v2-experience. No live data collection or order submission. Product records are review drafts. Images are original schematic category illustrations. Publish this branch from Settings > Pages > Deploy from a branch > gh-pages / root. Do not use the preview as a production export website.
+# Verdleaf website redesign — photographic editorial preview
+Public GitHub Pages static website, separate from Laravel/MySQL source. Catalogue records drawn from existing website and original PDF. Form options are requests, not guaranteed inventory. Original company assets and licensed botanical reference images are attributed; do not imply stock or actual farms. No server submission. Buyer Desk prepares a local email draft. Existing site remains unchanged.
