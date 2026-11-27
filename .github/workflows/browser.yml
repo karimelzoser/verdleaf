@@ -1,0 +1,39 @@
+name: Responsive browser evidence
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: mbstring, pdo_sqlite, sqlite3, dom, curl, xml, fileinfo
+          tools: composer:v2
+          coverage: none
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: composer install --prefer-dist --no-interaction
+      - run: |
+          cp .env.example .env
+          touch database/browser.sqlite
+          sed -i 's/^DB_CONNECTION=.*/DB_CONNECTION=sqlite/' .env
+          sed -i "s|^DB_DATABASE=.*|DB_DATABASE=$PWD/database/browser.sqlite|" .env
+          php artisan key:generate
+          php artisan migrate --seed --force
+      - run: npm install --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verdleaf-browser-evidence
+          path: |
+            visual-evidence/
+            test-results/
+          if-no-files-found: warn

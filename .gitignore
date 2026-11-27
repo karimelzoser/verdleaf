@@ -12,3 +12,7 @@
 /bootstrap/cache/*.php
 /database/*.sqlite
 /.phpunit.result.cache
+
+/test-results/
+/playwright-report/
+/visual-evidence/
