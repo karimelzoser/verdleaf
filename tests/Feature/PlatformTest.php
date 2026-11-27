@@ -71,4 +71,12 @@ class PlatformTest extends TestCase {
   [$p,$v]=$this->sample();$p->update(['name_ar'=>'بابونج','description_ar'=>'وصف تجريبي']);
   $this->get('/ar/products/chamomile')->assertOk();$this->post('/ar/buyer-desk/items',['variant_id'=>$v->id])->assertRedirect('/ar/buyer-desk');$this->get('/ar/buyer-desk')->assertOk();$this->get('/ar/compare')->assertOk();$this->get('/ar/enquire/visit')->assertOk();
  }
+ public function test_import_dry_run_and_commit():void{
+  $admin=User::create(['name'=>'Admin','email'=>'importer@example.test','password'=>'long-test-password','role'=>'admin']);
+  $csv="name,category,name_ar,botanical_name,description,description_ar,origin,source_url\nTest botanical,Flowers,,,,,,https://example.test\n";
+  $file=\Illuminate\Http\UploadedFile::fake()->createWithContent('catalogue.csv',$csv);
+  $this->actingAs($admin)->post('/admin/catalogue/preview',['file'=>$file])->assertRedirect()->assertSessionHasNoErrors();
+  $this->assertDatabaseMissing('products',['slug'=>'test-botanical']);
+  $this->post('/admin/catalogue/commit',['confirmed'=>1])->assertRedirect();$this->assertDatabaseHas('products',['slug'=>'test-botanical','status'=>'draft']);
+ }
 }

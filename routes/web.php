@@ -42,6 +42,10 @@ Route::prefix('admin')->middleware('auth')->group(function(){
  Route::get('/documents',[\App\Http\Controllers\PublicDocuments::class,'index'])->name('admin.documents');
  Route::post('/documents',[\App\Http\Controllers\PublicDocuments::class,'store'])->name('admin.documents.store');
  Route::post('/documents/{document}/archive',[\App\Http\Controllers\PublicDocuments::class,'archive'])->name('admin.documents.archive');
+ Route::get('/catalogue/import',[\App\Http\Controllers\CatalogueImport::class,'index'])->name('admin.catalogue.import');
+ Route::post('/catalogue/preview',[\App\Http\Controllers\CatalogueImport::class,'preview'])->name('admin.catalogue.preview');
+ Route::post('/catalogue/commit',[\App\Http\Controllers\CatalogueImport::class,'commit'])->name('admin.catalogue.commit');
+ Route::get('/catalogue/export',[\App\Http\Controllers\CatalogueImport::class,'export'])->name('admin.catalogue.export');
  Route::get('/growth',[\App\Http\Controllers\Growth::class,'index'])->name('admin.growth');
  Route::post('/redirects',[\App\Http\Controllers\Growth::class,'save'])->name('admin.redirect.save');
  Route::post('/redirects/{redirect}/remove',[\App\Http\Controllers\Growth::class,'remove'])->name('admin.redirect.remove');
