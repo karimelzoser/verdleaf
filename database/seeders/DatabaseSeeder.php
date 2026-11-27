@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder {
    $p=Product::firstOrCreate(['slug'=>Str::slug($name)],array_merge($drafts->get($name,[]),['name'=>$name,'category'=>$category,'status'=>'draft','source_url'=>'https://verdleaf.com/products/']));
    foreach($forms[$name]??[] as $form)Variant::firstOrCreate(['sku'=>strtoupper(Str::slug($name.'-'.$form))],['product_id'=>$p->id,'form'=>$form,'status'=>'draft']);
   }
+  $this->call(CompanyDraftSeeder::class);
  }
 }

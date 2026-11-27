@@ -1,0 +1,95 @@
+{
+  "note": "Derived from the public company website and draft buyer guide. Every record requires review. Certificate marks are not verified certificates.",
+  "entries": [
+    {
+      "type": "story",
+      "slug": "family-roots",
+      "title": "From local supply to international sourcing",
+      "title_ar": "من التوريد المحلي إلى الأسواق الدولية",
+      "body": "Verdleaf describes its roots as a family business working in agricultural ingredients since 1995. The original website explains that the business began by supplying Egyptian companies before expanding its export activities. Confirm the legal company timeline and add the family's own account before publication.",
+      "body_ar": "تعود خبرة العائلة في مجال المكونات الزراعية إلى عام 1995 وفقاً للموقع الحالي. بدأت أعمال التوريد محلياً قبل التوسع في التصدير. يُرجى تأكيد التسلسل الزمني وإضافة رواية العائلة قبل النشر.",
+      "source_url": "https://verdleaf.com/about-us/"
+    },
+    {
+      "type": "contact",
+      "slug": "export-contact",
+      "title": "Contact the export team",
+      "title_ar": "تواصل مع فريق التصدير",
+      "body": "Current website contact details: info@verdleaf.com; +20 101 239 9012; +20 106 665 0973. Office: El Mesla Square, Insurance Tower, first floor, Fayoum, Egypt. Confirm current contact details and response arrangements before publication.",
+      "body_ar": "بيانات التواصل المنشورة حالياً: info@verdleaf.com؛ ‎+20 101 239 9012؛ ‎+20 106 665 0973. العنوان: ميدان المسلة، برج التأمين، الدور الأول، الفيوم، مصر. تُراجع بيانات التواصل قبل النشر.",
+      "source_url": "https://verdleaf.com/contact-us/"
+    },
+    {
+      "type": "export",
+      "slug": "commercial-forms",
+      "title": "Choosing the form your production needs",
+      "title_ar": "اختيار الشكل المناسب للتصنيع",
+      "body": "The existing company site describes fresh, dried, powdered and tea bag cut ingredients. Ask the export team which form, grade and packing option are actually available for a specific product. Specify the intended use, quantity and destination.",
+      "body_ar": "يشير الموقع الحالي إلى منتجات طازجة ومجففة ومساحيق وأشكال مناسبة لأكياس الشاي. يجب تأكيد الشكل والدرجة والتعبئة المتاحة لكل منتج مع فريق التصدير.",
+      "source_url": "https://verdleaf.com/about-us/"
+    },
+    {
+      "type": "guide",
+      "slug": "prepare-your-request",
+      "title": "Preparing your sourcing request",
+      "title_ar": "إعداد طلب التوريد",
+      "body": "Start with the ingredient name and preferred commercial form. Include the quantity, destination, desired delivery date and any technical requirements. Select samples or documents if your quality team needs them. The export team will review the request; a submitted enquiry is not an accepted order.",
+      "body_ar": "ابدأ باسم المنتج والشكل التجاري المطلوب، ثم أضف الكمية والوجهة وموعد التسليم والمواصفات الفنية. يمكنك طلب عينة أو مستندات فنية. يُراجع فريق التصدير الطلب، ولا يُعد إرساله تأكيداً للشراء.",
+      "source_url": "https://verdleaf.com/products/"
+    },
+    {
+      "type": "farm",
+      "slug": "agricultural-origin-review",
+      "title": "Agricultural origin: details to verify",
+      "title_ar": "المنشأ الزراعي: بيانات للمراجعة",
+      "body": "The previous website refers to owned and affiliated cultivation, but uses both acres and feddans for the reported area. Confirm the correct unit, farm locations, ownership arrangements and crop schedules. Do not publish a numerical cultivated area until reconciled.",
+      "body_ar": "يشير الموقع الحالي إلى أراضٍ مملوكة وأخرى مرتبطة بالشركة، مع اختلاف وحدة قياس المساحة. تُراجع المساحة والمواقع ونوع العلاقة بالمزارع ومواعيد الزراعة قبل النشر.",
+      "source_url": "https://verdleaf.com/about-us/"
+    },
+    {
+      "type": "certificate",
+      "slug": "existing-mark-1",
+      "title": "EU Organic — evidence pending",
+      "title_ar": "EU Organic — المستندات قيد المراجعة",
+      "body": "The existing website displays a certification or registration-related graphic. Obtain the current original document, issuer, certificate number, scope, issue and expiry dates and verification method. This draft is not proof of current certification, and FDA registration is not product approval.",
+      "body_ar": "يعرض الموقع الحالي علامة مرتبطة بشهادة أو تسجيل. يجب الحصول على المستند الأصلي الساري ونطاقه وتواريخه وبيانات التحقق. هذا السجل التجريبي لا يثبت سريان الشهادة.",
+      "source_url": "https://verdleaf.com/about-us/"
+    },
+    {
+      "type": "certificate",
+      "slug": "existing-mark-2",
+      "title": "USDA Organic / NOP — evidence pending",
+      "title_ar": "USDA Organic / NOP — المستندات قيد المراجعة",
+      "body": "The existing website displays a certification or registration-related graphic. Obtain the current original document, issuer, certificate number, scope, issue and expiry dates and verification method. This draft is not proof of current certification, and FDA registration is not product approval.",
+      "body_ar": "يعرض الموقع الحالي علامة مرتبطة بشهادة أو تسجيل. يجب الحصول على المستند الأصلي الساري ونطاقه وتواريخه وبيانات التحقق. هذا السجل التجريبي لا يثبت سريان الشهادة.",
+      "source_url": "https://verdleaf.com/about-us/"
+    },
+    {
+      "type": "certificate",
+      "slug": "existing-mark-3",
+      "title": "Canada Organic / COR — evidence pending",
+      "title_ar": "Canada Organic / COR — المستندات قيد المراجعة",
+      "body": "The existing website displays a certification or registration-related graphic. Obtain the current original document, issuer, certificate number, scope, issue and expiry dates and verification method. This draft is not proof of current certification, and FDA registration is not product approval.",
+      "body_ar": "يعرض الموقع الحالي علامة مرتبطة بشهادة أو تسجيل. يجب الحصول على المستند الأصلي الساري ونطاقه وتواريخه وبيانات التحقق. هذا السجل التجريبي لا يثبت سريان الشهادة.",
+      "source_url": "https://verdleaf.com/about-us/"
+    },
+    {
+      "type": "certificate",
+      "slug": "existing-mark-4",
+      "title": "Organic JAS — evidence pending",
+      "title_ar": "Organic JAS — المستندات قيد المراجعة",
+      "body": "The existing website displays a certification or registration-related graphic. Obtain the current original document, issuer, certificate number, scope, issue and expiry dates and verification method. This draft is not proof of current certification, and FDA registration is not product approval.",
+      "body_ar": "يعرض الموقع الحالي علامة مرتبطة بشهادة أو تسجيل. يجب الحصول على المستند الأصلي الساري ونطاقه وتواريخه وبيانات التحقق. هذا السجل التجريبي لا يثبت سريان الشهادة.",
+      "source_url": "https://verdleaf.com/about-us/"
+    },
+    {
+      "type": "certificate",
+      "slug": "existing-mark-5",
+      "title": "FDA registration-related mark — evidence pending",
+      "title_ar": "FDA registration-related mark — المستندات قيد المراجعة",
+      "body": "The existing website displays a certification or registration-related graphic. Obtain the current original document, issuer, certificate number, scope, issue and expiry dates and verification method. This draft is not proof of current certification, and FDA registration is not product approval.",
+      "body_ar": "يعرض الموقع الحالي علامة مرتبطة بشهادة أو تسجيل. يجب الحصول على المستند الأصلي الساري ونطاقه وتواريخه وبيانات التحقق. هذا السجل التجريبي لا يثبت سريان الشهادة.",
+      "source_url": "https://verdleaf.com/about-us/"
+    }
+  ]
+}
