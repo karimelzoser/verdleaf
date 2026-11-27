@@ -1,0 +1,2 @@
+@extends('ar.layout')
+@section('content')<section class="wrap"><h1>تم استلام الطلب.</h1><p>الرقم المرجعي: <strong dir="ltr">{{$reference}}</strong></p><p>تم تسجيل طلبك لمراجعته من فريق التصدير. لا يُعد تأكيداً للشراء.</p><a href="{{route('ar.home')}}">العودة للرئيسية</a></section>@endsection
