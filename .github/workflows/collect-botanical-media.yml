@@ -1,0 +1,22 @@
+name: Collect licensed botanical photography
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/collect-botanical-media.yml','scripts/collect-botanical-media.py']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install requests beautifulsoup4 pillow pymupdf
+      - run: python scripts/collect-botanical-media.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: botanical-photography
+          path: |
+            media/
+            media-manifest.js
+            source-*
