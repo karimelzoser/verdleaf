@@ -1,4 +1,4 @@
-# Engineering, backlog and release gates
+# Engineering, backlog and release gates — v2.0
 ## Architecture
 Proposed Laravel + supported PHP + MySQL/MariaDB, Blade server-rendered pages, Vite assets, bespoke CSS/Tailwind utilities and selective Alpine/React islands where complexity merits. No Node runtime required for public SSR; build JS locally/CI. Filament or custom admin after dependency/hosting review. Composer lock, migrations, factory/seed for test only, automated tests. On Hostinger verify plan, PHP version/extensions, SSH/Composer, document-root control, DB/storage/upload limits, cron, outbound SMTP, SSL, backups and deployment constraints. If document root cannot safely expose only public/, use approved safe deployment layout or upgrade; never expose .env/vendor/private storage. If hosting cannot meet Laravel requirements, evaluate custom WordPress theme/plugin with same content model before committing. GitHub Pages cannot run PHP/MySQL.
 
@@ -33,7 +33,7 @@ Roles: super-admin, editor, export sales, quality reviewer, analytics viewer. Po
 | P14 | Media pipeline and performance | P05/P07 | optimized responsive images and video |
 | P15 | Security/accessibility/browser/visual QA | P04–P14 | documented regression matrix |
 | P16 | Staging, UAT, backup/rollback, release | P15 | client sign-off and hosting proof |
-| P17 | Phase 2 expansion/CRM/comparison | release | separate approved scope |
+| P17 | Phase 2 expansion/CRM/advanced reporting | release | separate approved scope |
 | P18 | Phase 3 portal/AI/traceability | P17 | separate privacy and feasibility approval |
 
 ## Test matrix and release gates
@@ -41,3 +41,22 @@ Unit: data validation, schedule mapping, permissions, expiry, RFQ calculation. F
 
 ## Hosting/release
 Keep main stable, use feature branches and PRs after this initial empty-repo planning commit. CI lint, static analysis, unit/feature tests, build assets, browser tests; no deployment on PR. Provision protected staging with separate database, secrets in environment, no indexing. Validate backup/restore, migration dry run and previous version rollback, confirm email deliverability SPF/DKIM/DMARC as appropriate. On approval, snapshot legacy site/DB/media, deploy artifact to protected application path, point public root to Laravel public, migrate with backup, cache config/routes as suitable, verify cron/SMTP, HTTPS, smoke tests and redirects, submit sitemap, monitor logs and conversion. Never overwrite live WordPress without signed release. Document restoration and owner handover.
+
+## V2 implementation dependencies and acceptance
+The v1 backlog is retained but P07 now includes typo-tolerant bilingual search, variant zoom and compare; P08 adds seasonal content; P10 includes sourcing evidence and tour; P11 becomes unified Buyer Desk; P13 adds SEO health. Insert V01–V09 before P15/16 (unless marked future). P02 must pass prototype approval before implementation. 
+| ID | Work package | Depends | Acceptance |
+|---|---|---|---|
+| V01 | Botanical Atlas & bilingual synonyms | P06,P07 | Search by common/botanical name, approved Arabic alias; index links canonical product; no duplicate pages |
+| V02 | Ingredient Finder | P06,P07 | application/form/grade filters; approved matches, empty state custom request, no false claims |
+| V03 | Compare, zoom, packaging explorer | P07 | max 3 variants, units normalized, accessible controls, unknown values explicit |
+| V04 | Public passport and filtered print | P06,P09 | current approved facts, scope/expiry, QR canonical, printed media and revision date |
+| V05 | Buyer Desk combined requests | V02,P11 | no mandatory account, item-specific purposes, server review/validation, one reference/transaction, no duplicate |
+| V06 | Shareable shortlist | V05 | unguessable expiring token, read-only, no personal data, revoke, noindex; print alternative |
+| V07 | Field Notes and guided tour | P08,P10 | approved media, dates, accessibility and static fallback; no fake freshness |
+| V08 | Responsible sourcing and case studies | P09,P10 | evidence scope/date, approval/consent, no unsupported claims |
+| V09 | SEO health and QR campaigns | P13 | actionable reports, test links and privacy-safe metrics |
+| V10 | Private batch passport & portal (future) | P18 | verified lot system, tenant authorization, signed time-limited docs, audit and retention |
+
+Extend data model: search_aliases(product_id,locale,normalized_alias), applications and approved application-variant pivot, comparison via approved specs (no private data), sourcing_requests with request_items and per-item request_purposes (quote/sample/document/custom), requested_document_types, share_tokens(token_hash,expiry,revoked_at,non-sensitive item snapshot), packaging_variant relation, field_notes and scheduling, tour_stops and approved media, sourcing_evidence with scope/issuer/date/approval, SEO_issues with owner/status. Public passport is computed view, not duplicated truth; future lot tables and separate permission policies. 
+Buyer Desk: maintain local shortlist IDs and non-sensitive quantities only; contacts entered at final step, no localStorage PII; server revalidates all approved SKU/form IDs, rate limit, CSRF, idempotency and transaction; email receipt via outbox; request any/all purposes; custom sourcing permits free text with clear validation; staff route purposes internally. Share never includes identity or attachments. Compare/finder require accessible HTML baseline and progressive enhancement. 
+QA additions: search synonym/typo/Arabic test set; invalid/expired/revoked token; compare 0/1/3/4 and incompatible units; missing documents; mixed request atomicity and deduplication; no invented specs; QR path; print layout; tour reduced motion, no media and no JS; accessibility of zoom; stale seasonal content fallback; SEO duplicate and leakage tests. Prototype files are design studies only: no PHP/SQL, authentication, CRM or real request submissions. Browser visual approval must precede production implementation.
