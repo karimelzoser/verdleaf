@@ -1,0 +1,2 @@
+@extends('layout')
+@section('content')<section class="wrap narrow"><h1>Staff login.</h1><form method="post" action="{{route('login')}}">@csrf<label>Email<input name="email" type="email" required autocomplete="username"></label><label>Password<input name="password" type="password" required autocomplete="current-password"></label><button class="primary">Sign in</button></form></section>@endsection

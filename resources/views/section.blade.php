@@ -1,0 +1,5 @@
+@extends('layout')
+@section('title',$meta[0].' | Verdleaf')
+@section('content')
+<section class="wrap"><p class="eyebrow">Verdleaf / {{str_replace('-',' ',$section)}}</p><h1>{{$meta[0]}}.</h1><p>{{$meta[1]}}</p>@if($section==='inside-verdleaf')<ol class="journey light">@foreach(['Cultivation','Harvest','Processing','Quality assurance','Packaging','Export'] as $step)<li><span>0{{$loop->iteration}}</span>{{$step}}</li>@endforeach</ol>@endif<div class="chapter entries">@forelse($entries as $entry)<article><p class="eyebrow">{{$entry->event_date?->format('d M Y')}} @if($entry->expires_at) · Validity: {{$entry->expires_at->format('d M Y')}} @if($entry->expires_at->isPast()) · Expired @endif @endif</p><h2>{{$entry->title}}</h2><p class="prose">{{$entry->body}}</p>@if($entry->source_url)<a href="{{$entry->source_url}}" rel="noopener noreferrer">Source / document ↗</a>@endif</article>@empty<p>Approved information is being prepared for this section.</p>@endforelse</div><a class="primary" href="{{route('products')}}">Explore ingredients ↗</a></section>
+@endsection

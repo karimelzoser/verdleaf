@@ -1,0 +1,31 @@
+<?php
+use App\Http\Controllers\PublicSite;
+use App\Http\Controllers\BuyerDesk;
+use App\Http\Controllers\Admin;
+use Illuminate\Support\Facades\Route;
+Route::get('/',[PublicSite::class,'home'])->name('home');
+Route::get('/products',[PublicSite::class,'catalogue'])->name('products');
+Route::get('/atlas',[PublicSite::class,'catalogue'])->defaults('mode','atlas')->name('atlas');
+Route::get('/ingredient-finder',[PublicSite::class,'catalogue'])->defaults('mode','finder')->name('finder');
+Route::get('/products/{slug}',[PublicSite::class,'product'])->name('product');
+Route::get('/buyer-desk',[BuyerDesk::class,'index'])->name('desk');
+Route::post('/buyer-desk/items',[BuyerDesk::class,'add'])->name('desk.add');
+Route::post('/buyer-desk/update',[BuyerDesk::class,'update'])->name('desk.update');
+Route::post('/buyer-desk/submit',[BuyerDesk::class,'submit'])->middleware('throttle:5,1')->name('desk.submit');
+Route::get('/buyer-desk/receipt',[BuyerDesk::class,'receipt'])->name('desk.receipt');
+Route::get('/compare',[BuyerDesk::class,'compare'])->name('compare');
+Route::get('/robots.txt',[PublicSite::class,'robots']);
+Route::get('/sitemap.xml',[PublicSite::class,'sitemap']);
+Route::get('/login',[Admin::class,'login'])->name('login');
+Route::post('/login',[Admin::class,'authenticate'])->middleware('throttle:5,1');
+Route::post('/logout',[Admin::class,'logout'])->middleware('auth')->name('logout');
+Route::prefix('admin')->middleware('auth')->group(function(){
+ Route::get('/',[Admin::class,'index'])->name('admin');
+ Route::get('/products/{product}',[Admin::class,'edit'])->name('admin.product');
+ Route::post('/products/{product}',[Admin::class,'save'])->name('admin.product.save');
+ Route::post('/products/{product}/variants',[Admin::class,'variant'])->name('admin.variant');
+ Route::post('/variants/{variant}',[Admin::class,'saveVariant'])->name('admin.variant.save');
+ Route::post('/content',[Admin::class,'content'])->name('admin.content');
+ Route::post('/requests/{sourcingRequest}',[Admin::class,'status'])->name('admin.status');
+});
+Route::get('/{section}',[PublicSite::class,'section'])->where('section','about|inside-verdleaf|farms|facilities|quality|certifications|crop-calendar|exhibitions|visits|markets|industries|export-services|responsible-sourcing|insights|downloads|how-to-order|contact|privacy')->name('section');
