@@ -1,0 +1,32 @@
+name: Verify redesigned GitHub Pages experience
+on:
+  workflow_run:
+    workflows: ["Import exact original product photographs"]
+    types: [completed]
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/verify-preview.yml','scripts/verify-preview.mjs']
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: preview
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+      - run: node --check preview/site.js
+      - run: node scripts/verify-preview.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verdleaf-redesign-screenshots
+          path: visual-evidence/
