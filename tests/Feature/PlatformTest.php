@@ -29,8 +29,8 @@ class PlatformTest extends TestCase {
   ContentEntry::create(['type'=>'privacy','slug'=>'test','title'=>'Test privacy','body'=>'Test only','status'=>'published']);
   $this->post('/buyer-desk/update',['items'=>[$v->id=>['quantity'=>1250,'purposes'=>['quote','sample','documents']]]])->assertRedirect('/buyer-desk');
   $token=session('request_token');
-  $data=['company'=>'Test company','email'=>'buyer@example.test','contact_name'=>'Test buyer','country'=>'Germany','consent'=>1,'request_token'=>$token];
-  $this->post('/buyer-desk/submit',$data)->assertRedirect('/buyer-desk/receipt');$this->assertDatabaseCount('sourcing_requests',1);$this->assertDatabaseHas('sourcing_items',['variant_id'=>$v->id,'quantity_kg'=>1250]);
+  $data=['company'=>'Test company','email'=>'buyer@example.test','contact_name'=>'Test buyer','country'=>'Germany','destination_port'=>'Hamburg','incoterm'=>'CIF','packaging_preference'=>'Test only','consent'=>1,'request_token'=>$token];
+  $this->post('/buyer-desk/submit',$data)->assertRedirect('/buyer-desk/receipt');$this->assertDatabaseCount('sourcing_requests',1);$this->assertDatabaseHas('sourcing_requests',['destination_port'=>'Hamburg','incoterm'=>'CIF']);$this->assertDatabaseHas('notification_outbox',['kind'=>'sourcing']);$this->assertDatabaseHas('sourcing_items',['variant_id'=>$v->id,'quantity_kg'=>1250]);
   $this->get('/buyer-desk/receipt')->assertSee('Request received');$this->post('/buyer-desk/submit',$data)->assertStatus(419);$this->assertDatabaseCount('sourcing_requests',1);
  }
  public function test_admin_requires_role():void{

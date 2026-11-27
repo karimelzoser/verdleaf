@@ -10,7 +10,14 @@ class SendNotifications {
    foreach($pending as $item){
     try{
      $record=$item->kind==='sourcing'?SourcingRequest::where('reference',$item->reference)->firstOrFail():GeneralEnquiry::where('reference',$item->reference)->firstOrFail();
-     Mail::raw('New Verdleaf enquiry '.$record->reference.'. Sign in to the staff dashboard to review. Do not forward private buyer details.',fn($m)=>$m->to(config('verdleaf.sales_email'))->subject('Verdleaf enquiry '.$record->reference));
+     if(!$item->staff_sent_at){
+      Mail::raw('New Verdleaf enquiry '.$record->reference.'. Sign in to the staff dashboard to review. Do not forward private buyer details.',fn($m)=>$m->to(config('verdleaf.sales_email'))->subject('Verdleaf enquiry '.$record->reference));
+      $item->update(['staff_sent_at'=>now()]);
+     }
+     if(!$item->buyer_sent_at){
+      Mail::raw('Thank you for contacting Verdleaf. Your request reference is '.$record->reference.'. Our export team will review your requirements. This message is a receipt, not an order confirmation.',fn($m)=>$m->to($record->email)->subject('Your Verdleaf request '.$record->reference));
+      $item->update(['buyer_sent_at'=>now()]);
+     }
      $item->update(['sent_at'=>now()]);
     }catch(\Throwable $e){$attempts=$item->attempts+1;$item->update(['attempts'=>$attempts,'next_attempt_at'=>now()->addMinutes(min(60,2**$attempts)),'failed_at'=>$attempts>=5?now():null]);}
    }

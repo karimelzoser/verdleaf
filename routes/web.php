@@ -29,6 +29,7 @@ Route::get('/sitemap.xml',[PublicSite::class,'sitemap']);
 Route::get('/login',[Admin::class,'login'])->name('login');
 Route::post('/login',[Admin::class,'authenticate'])->middleware('throttle:5,1');
 Route::post('/logout',[Admin::class,'logout'])->middleware('auth')->name('logout');
+Route::get('/staff/attachments/{sourcingRequest}',[\App\Http\Controllers\RequestAttachments::class,'download'])->middleware('auth')->name('request.attachment');
 Route::prefix('staff')->middleware('auth')->group(function(){
  Route::get('/',[\App\Http\Controllers\Staff::class,'index'])->name('staff');
  Route::post('/draft',[\App\Http\Controllers\Staff::class,'draft'])->name('staff.draft');
