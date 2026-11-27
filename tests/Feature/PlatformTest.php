@@ -40,4 +40,20 @@ class PlatformTest extends TestCase {
   $admin=User::create(['name'=>'Admin','email'=>'admin@example.test','password'=>'long-test-password','role'=>'admin']);
   $this->actingAs($admin)->get('/admin')->assertOk();
  }
+ public function test_arabic_and_editorial():void{
+  [$p,$v]=$this->sample();$p->update(['name_ar'=>'بابونج','description_ar'=>'وصف تجريبي']);
+  $this->get('/ar')->assertOk();$this->get('/ar/products')->assertSee('بابونج');$this->get('/ar/products/chamomile')->assertOk();
+  $e=ContentEntry::create(['type'=>'event','slug'=>'example-event','title'=>'Example event','body'=>'Test content','status'=>'published']);
+  $this->get('/exhibitions/example-event')->assertOk()->assertSee('Example event');$e->update(['status'=>'draft']);$this->get('/exhibitions/example-event')->assertNotFound();
+  config(['verdleaf.preview'=>true]);$this->post('/enquire/visit',[])->assertForbidden();
+ }
+ public function test_admin_editor_media_seo():void{
+  [$p,$v]=$this->sample();$admin=User::create(['name'=>'Admin','email'=>'admin2@example.test','password'=>'long-test-password','role'=>'admin']);
+  $this->actingAs($admin)->get('/admin/products/'.$p->id)->assertOk();$this->get('/admin/media')->assertOk();$this->get('/admin/seo')->assertOk();
+ }
+ public function test_share_expiry_and_revocation():void{
+  [$p,$v]=$this->sample();$this->post('/buyer-desk/items',['variant_id'=>$v->id]);$this->post('/shortlist')->assertRedirect('/buyer-desk');
+  $url=session('share_url');$id=session('share_id');$this->get($url)->assertOk()->assertSee('Chamomile');
+  $this->post('/shortlist/'.$id.'/revoke')->assertRedirect('/buyer-desk');$this->get($url)->assertNotFound();
+ }
 }

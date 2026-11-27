@@ -13,6 +13,9 @@ Route::post('/buyer-desk/items',[BuyerDesk::class,'add'])->name('desk.add');
 Route::post('/buyer-desk/update',[BuyerDesk::class,'update'])->name('desk.update');
 Route::post('/buyer-desk/submit',[BuyerDesk::class,'submit'])->middleware('throttle:5,1')->name('desk.submit');
 Route::get('/buyer-desk/receipt',[BuyerDesk::class,'receipt'])->name('desk.receipt');
+Route::post('/shortlist',[\App\Http\Controllers\Shortlists::class,'create'])->middleware('throttle:10,1')->name('shortlist.create');
+Route::get('/shortlist/{token}',[\App\Http\Controllers\Shortlists::class,'show'])->name('shortlist.show');
+Route::post('/shortlist/{share}/revoke',[\App\Http\Controllers\Shortlists::class,'revoke'])->name('shortlist.revoke');
 Route::get('/compare',[BuyerDesk::class,'compare'])->name('compare');
 Route::get('/crop-calendar',[\App\Http\Controllers\CropCalendar::class,'index'])->name('calendar');
 Route::get('/media/{asset}',[\App\Http\Controllers\MediaLibrary::class,'show'])->name('media.show');
@@ -25,6 +28,8 @@ Route::get('/login',[Admin::class,'login'])->name('login');
 Route::post('/login',[Admin::class,'authenticate'])->middleware('throttle:5,1');
 Route::post('/logout',[Admin::class,'logout'])->middleware('auth')->name('logout');
 Route::prefix('admin')->middleware('auth')->group(function(){
+ Route::get('/seo',[Admin::class,'seo'])->name('admin.seo');
+ Route::post('/notifications/{notification}/retry',[Admin::class,'retry'])->name('admin.notification.retry');
  Route::get('/media',[\App\Http\Controllers\MediaLibrary::class,'index'])->name('admin.media');
  Route::post('/media',[\App\Http\Controllers\MediaLibrary::class,'store'])->name('admin.media.store');
  Route::post('/enquiries/{enquiry}',[\App\Http\Controllers\GeneralEnquiries::class,'status'])->name('admin.enquiry.status');

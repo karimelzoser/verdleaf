@@ -1,0 +1,3 @@
+@extends('layout')
+@section('title','Shared ingredient shortlist | Verdleaf')
+@section('content')<section class="wrap"><h1>Shared shortlist.</h1><p>Read-only link expires {{$share->expires_at->format('d M Y')}}. No buyer contact details or quantities are included.</p>@forelse($variants as $v)<article class="variant"><h3>{{$v->product->name}} · {{$v->form}}</h3><a href="{{route('product',$v->product->slug)}}">Explore product ↗</a><form method="post" action="{{route('desk.add')}}">@csrf<input type="hidden" name="variant_id" value="{{$v->id}}"><button class="secondary">Add to my Buyer Desk</button></form></article>@empty<p>No currently visible forms.</p>@endforelse<button class="secondary" data-print>Print shortlist</button></section>@endsection

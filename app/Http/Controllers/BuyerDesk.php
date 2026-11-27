@@ -22,7 +22,7 @@ class BuyerDesk {
   $record=DB::transaction(function()use($data,$basket,$variants){
    $existing=SourcingRequest::where('idempotency_key',$data['request_token'])->first();if($existing)return $existing;
    $record=SourcingRequest::create(['reference'=>'VL-'.Str::upper(Str::random(16)),'idempotency_key'=>$data['request_token'],'company'=>$data['company'],'email'=>$data['email'],'contact_name'=>$data['contact_name'],'country'=>$data['country'],'notes'=>$data['notes']??null,'consent_at'=>now()]);
-   foreach($basket as $id=>$item){$v=$variants[$id];$record->items()->create(['variant_id'=>$v->id,'product_name'=>$v->product->name,'form'=>$v->form,'grade'=>$v->grade,'quantity_kg'=>$item['quantity'],'purposes'=>$item['purposes']]);}return $record;
+   foreach($basket as $id=>$item){$v=$variants[$id];$record->items()->create(['variant_id'=>$v->id,'product_name'=>$v->product->name,'form'=>$v->form,'grade'=>$v->grade,'quantity_kg'=>$item['quantity'],'purposes'=>$item['purposes']]);} \App\Models\Notification::firstOrCreate(['reference'=>$record->reference],['kind'=>'sourcing','next_attempt_at'=>now()]);return $record;
   });
   $r->session()->forget(['basket','request_token']);$r->session()->put('receipt',$record->reference);return redirect()->route('desk.receipt');
  }

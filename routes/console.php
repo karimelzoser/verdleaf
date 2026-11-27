@@ -8,3 +8,6 @@ Artisan::command('verdleaf:admin {email}', function(){
  User::create(['name'=>'Administrator','email'=>$data['email'],'password'=>$data['password'],'role'=>'admin']);
  $this->info('Administrator created.');
 });
+
+Artisan::command('verdleaf:notify',function(){app(\App\Services\SendNotifications::class)->run();});
+\Illuminate\Support\Facades\Schedule::command('verdleaf:notify')->everyFiveMinutes()->withoutOverlapping();
