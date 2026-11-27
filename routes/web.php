@@ -22,6 +22,7 @@ Route::post('/login',[Admin::class,'authenticate'])->middleware('throttle:5,1');
 Route::post('/logout',[Admin::class,'logout'])->middleware('auth')->name('logout');
 Route::prefix('admin')->middleware('auth')->group(function(){
  Route::get('/',[Admin::class,'index'])->name('admin');
+ Route::post('/products',[Admin::class,'createProduct'])->name('admin.product.create');
  Route::get('/products/{product}',[Admin::class,'edit'])->name('admin.product');
  Route::post('/products/{product}',[Admin::class,'save'])->name('admin.product.save');
  Route::post('/products/{product}/variants',[Admin::class,'variant'])->name('admin.variant');
