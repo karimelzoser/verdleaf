@@ -1,0 +1,33 @@
+name: Import exact original product photographs
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/import-exact-photos.yml','scripts/import-exact-photos.py']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  photos:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: preview
+      - run: pip install requests beautifulsoup4 pillow
+      - run: python scripts/import-exact-photos.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: verdleaf-final-media
+          path: |
+            preview/media/
+            preview/media-manifest.js
+      - name: Commit downloaded photos to isolated preview branch
+        working-directory: preview
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add media media-manifest.js
+          git diff --cached --quiet || git commit -m "Import actual product and licensed botanical photographs with attribution"
+          git push origin HEAD:gh-pages
