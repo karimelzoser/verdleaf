@@ -7,6 +7,8 @@ Route::get('/',[PublicSite::class,'home'])->name('home');
 Route::get('/products',[PublicSite::class,'catalogue'])->name('products');
 Route::get('/atlas',[PublicSite::class,'catalogue'])->defaults('mode','atlas')->name('atlas');
 Route::get('/ingredient-finder',[PublicSite::class,'catalogue'])->defaults('mode','finder')->name('finder');
+Route::get('/catalogue/print',[PublicSite::class,'printCatalogue'])->name('catalogue.print');
+Route::get('/documents/{document}',[\App\Http\Controllers\PublicDocuments::class,'download'])->name('documents.download');
 Route::get('/products/{slug}',[PublicSite::class,'product'])->name('product');
 Route::get('/buyer-desk',[BuyerDesk::class,'index'])->name('desk');
 Route::post('/buyer-desk/items',[BuyerDesk::class,'add'])->name('desk.add');
@@ -28,6 +30,9 @@ Route::get('/login',[Admin::class,'login'])->name('login');
 Route::post('/login',[Admin::class,'authenticate'])->middleware('throttle:5,1');
 Route::post('/logout',[Admin::class,'logout'])->middleware('auth')->name('logout');
 Route::prefix('admin')->middleware('auth')->group(function(){
+ Route::get('/documents',[\App\Http\Controllers\PublicDocuments::class,'index'])->name('admin.documents');
+ Route::post('/documents',[\App\Http\Controllers\PublicDocuments::class,'store'])->name('admin.documents.store');
+ Route::post('/documents/{document}/archive',[\App\Http\Controllers\PublicDocuments::class,'archive'])->name('admin.documents.archive');
  Route::get('/seo',[Admin::class,'seo'])->name('admin.seo');
  Route::post('/notifications/{notification}/retry',[Admin::class,'retry'])->name('admin.notification.retry');
  Route::get('/media',[\App\Http\Controllers\MediaLibrary::class,'index'])->name('admin.media');

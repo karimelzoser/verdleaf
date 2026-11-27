@@ -28,12 +28,13 @@ class PublicSite {
  public function catalogue(Request $r,$mode='catalogue'){
   $q=trim(mb_substr((string)$r->query('q',''),0,100));$category=trim(mb_substr((string)$r->query('category',''),0,100));$form=trim(mb_substr((string)$r->query('form',''),0,100));$application=trim(mb_substr((string)$r->query('application',''),0,100));
   $builder=Product::visible()->with(['variants'=>fn($v)=>$v->visible()]);
-  if($q!=='')$builder->where(function($b)use($q){$term='%'.str_replace(['%','_'],['\\%','\\_'],$q).'%';$b->where('name','like',$term)->orWhere('name_ar','like',$term)->orWhere('botanical_name','like',$term)->orWhere('aliases','like',$term);});
+  if($q!==''){$ids=Product::visible()->select(['id','name','name_ar','botanical_name','aliases'])->get()->filter(fn($p)=>\App\Services\IngredientSearch::matches($p,$q))->pluck('id');$builder->whereIn('id',$ids);}
   if($category!=='')$builder->where('category',$category);
   if($form!=='')$builder->whereHas('variants',fn($v)=>$v->visible()->where('form',$form));
   if($application!=='')$builder->whereJsonContains('applications',$application);
   return view('catalogue',['products'=>$builder->orderBy('name')->paginate(12)->withQueryString(),'categories'=>Product::visible()->distinct()->orderBy('category')->pluck('category'),'mode'=>$mode,'q'=>$q,'category'=>$category,'form'=>$form,'application'=>$application]);
  }
+ public function printCatalogue(Request $r){$q=trim(mb_substr((string)$r->query('q',''),0,100));$category=mb_substr((string)$r->query('category',''),0,100);$form=mb_substr((string)$r->query('form',''),0,100);$application=mb_substr((string)$r->query('application',''),0,100);$b=Product::visible()->with(['variants'=>fn($v)=>$v->visible()]);if($category!=='')$b->where('category',$category);if($form!=='')$b->whereHas('variants',fn($v)=>$v->visible()->where('form',$form));if($application!=='')$b->whereJsonContains('applications',$application);$products=$b->orderBy('name')->get()->filter(fn($p)=>\App\Services\IngredientSearch::matches($p,$q));return view('print-catalogue',compact('products'));}
  public function product(string $slug){$product=Product::visible()->where('slug',$slug)->with(['media','variants'=>fn($q)=>$q->visible()->with('media')->orderBy('form')])->firstOrFail();return view('product',compact('product'));}
  public function section(string $section){$meta=self::SECTIONS[$section];$entries=ContentEntry::visible()->where('type',$meta[2])->with('media')->latest('event_date')->latest('id')->get();return view('section',compact('section','meta','entries'));}
  public function entry(string $section,string $slug){$meta=self::SECTIONS[$section];$entry=ContentEntry::visible()->where('type',$meta[2])->where('slug',$slug)->with('media')->firstOrFail();return view('entry',compact('section','meta','entry'));}
