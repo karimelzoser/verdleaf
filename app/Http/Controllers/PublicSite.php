@@ -24,7 +24,7 @@ class PublicSite {
  'contact'=>['Start a conversation','Tell the export team what your business needs.','contact'],
  'privacy'=>['Privacy information','Review the approved data handling information before submitting a request.','privacy'],
  ];
- public function home(){return view('home',['featured'=>Product::visible()->whereIn('slug',['chamomile','hibiscus','fennel'])->get(),'news'=>ContentEntry::visible()->whereIn('type',['article','event','visit'])->latest('event_date')->take(3)->get()]);}
+ public function home(){return view('home',['hero'=>ContentEntry::visible()->where('type','hero')->with('media')->latest('id')->first(),'featured'=>Product::visible()->whereIn('slug',['chamomile','hibiscus','fennel'])->get(),'news'=>ContentEntry::visible()->with('media')->whereIn('type',['article','event','visit'])->latest('event_date')->take(3)->get()]);}
  public function catalogue(Request $r,$mode='catalogue'){
   $q=trim(mb_substr((string)$r->query('q',''),0,100));$category=trim(mb_substr((string)$r->query('category',''),0,100));$form=trim(mb_substr((string)$r->query('form',''),0,100));$application=trim(mb_substr((string)$r->query('application',''),0,100));
   $builder=Product::visible()->with(['variants'=>fn($v)=>$v->visible()]);
@@ -34,7 +34,7 @@ class PublicSite {
   if($application!=='')$builder->whereJsonContains('applications',$application);
   return view('catalogue',['products'=>$builder->orderBy('name')->paginate(12)->withQueryString(),'categories'=>Product::visible()->distinct()->orderBy('category')->pluck('category'),'mode'=>$mode,'q'=>$q,'category'=>$category,'form'=>$form,'application'=>$application]);
  }
- public function product(string $slug){$product=Product::visible()->where('slug',$slug)->with(['variants'=>fn($q)=>$q->visible()->orderBy('form')])->firstOrFail();return view('product',compact('product'));}
+ public function product(string $slug){$product=Product::visible()->where('slug',$slug)->with(['media','variants'=>fn($q)=>$q->visible()->with('media')->orderBy('form')])->firstOrFail();return view('product',compact('product'));}
  public function section(string $section){$meta=self::SECTIONS[$section];$entries=ContentEntry::visible()->where('type',$meta[2])->with('media')->latest('event_date')->latest('id')->get();return view('section',compact('section','meta','entries'));}
  public function entry(string $section,string $slug){$meta=self::SECTIONS[$section];$entry=ContentEntry::visible()->where('type',$meta[2])->where('slug',$slug)->with('media')->firstOrFail();return view('entry',compact('section','meta','entry'));}
  public function robots(){return response(config('verdleaf.preview')?"User-agent: *\nDisallow: /\n":"User-agent: *\nDisallow: /admin\nDisallow: /buyer-desk\nDisallow: /compare\nSitemap: ".url('/sitemap.xml')."\n",200,['Content-Type'=>'text/plain']);}
