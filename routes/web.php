@@ -29,6 +29,14 @@ Route::get('/sitemap.xml',[PublicSite::class,'sitemap']);
 Route::get('/login',[Admin::class,'login'])->name('login');
 Route::post('/login',[Admin::class,'authenticate'])->middleware('throttle:5,1');
 Route::post('/logout',[Admin::class,'logout'])->middleware('auth')->name('logout');
+Route::prefix('staff')->middleware('auth')->group(function(){
+ Route::get('/',[\App\Http\Controllers\Staff::class,'index'])->name('staff');
+ Route::post('/draft',[\App\Http\Controllers\Staff::class,'draft'])->name('staff.draft');
+ Route::post('/products/{product}/approve',[\App\Http\Controllers\Staff::class,'approveProduct'])->name('staff.approve.product');
+ Route::post('/certificates/{entry}/approve',[\App\Http\Controllers\Staff::class,'approveCertificate'])->name('staff.approve.certificate');
+ Route::post('/sourcing/{sourcingRequest}',[\App\Http\Controllers\Staff::class,'sourcingStatus'])->name('staff.sourcing.status');
+ Route::post('/general/{enquiry}',[\App\Http\Controllers\Staff::class,'generalStatus'])->name('staff.general.status');
+});
 Route::prefix('admin')->middleware('auth')->group(function(){
  Route::get('/documents',[\App\Http\Controllers\PublicDocuments::class,'index'])->name('admin.documents');
  Route::post('/documents',[\App\Http\Controllers\PublicDocuments::class,'store'])->name('admin.documents.store');

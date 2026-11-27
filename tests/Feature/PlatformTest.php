@@ -56,4 +56,15 @@ class PlatformTest extends TestCase {
   $url=session('share_url');$id=session('share_id');$this->get($url)->assertOk()->assertSee('Chamomile');
   $this->post('/shortlist/'.$id.'/revoke')->assertRedirect('/buyer-desk');$this->get($url)->assertNotFound();
  }
+ public function test_staff_roles_are_scoped():void{
+  [$p,$v]=$this->sample('draft');
+  $editor=User::create(['name'=>'Editor','email'=>'editor2@example.test','password'=>'long-test-password','role'=>'editor']);
+  $this->actingAs($editor)->get('/staff')->assertOk();
+  $this->post('/staff/products/'.$p->id.'/approve',['approved'=>1])->assertForbidden();
+  $this->post('/staff/draft',['type'=>'article','title'=>'Test draft','body'=>'Draft content'])->assertRedirect();
+  $this->assertDatabaseHas('content_entries',['title'=>'Test draft','status'=>'draft']);
+  $this->assertDatabaseHas('activity_log',['actor_id'=>$editor->id,'entity'=>'ContentEntry','event'=>'created']);
+  $sales=User::create(['name'=>'Sales','email'=>'sales@example.test','password'=>'long-test-password','role'=>'sales']);
+  $this->actingAs($sales)->get('/staff')->assertOk();$this->get('/admin')->assertForbidden();
+ }
 }
