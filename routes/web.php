@@ -45,6 +45,8 @@ Route::prefix('admin')->middleware('auth')->group(function(){
  Route::post('/notifications/{notification}/retry',[Admin::class,'retry'])->name('admin.notification.retry');
  Route::get('/media',[\App\Http\Controllers\MediaLibrary::class,'index'])->name('admin.media');
  Route::post('/media',[\App\Http\Controllers\MediaLibrary::class,'store'])->name('admin.media.store');
+ Route::post('/media/video',[\App\Http\Controllers\MediaLibrary::class,'storeVideo'])->name('admin.media.video');
+ Route::post('/media/{asset}/archive',[\App\Http\Controllers\MediaLibrary::class,'archive'])->name('admin.media.archive');
  Route::post('/enquiries/{enquiry}',[\App\Http\Controllers\GeneralEnquiries::class,'status'])->name('admin.enquiry.status');
  Route::get('/',[Admin::class,'index'])->name('admin');
  Route::post('/products',[Admin::class,'createProduct'])->name('admin.product.create');

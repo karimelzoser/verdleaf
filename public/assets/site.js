@@ -12,3 +12,7 @@ function setupPanels(selector,targetAttr){
  select(0);buttons.forEach((b,i)=>b.addEventListener('click',()=>select(i)));
 }
 setupPanels('[data-form-target]','data-form-target');setupPanels('[data-tour-target]','data-tour-target');
+
+document.querySelectorAll('[data-cinematic]').forEach(video=>{
+ if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&matchMedia('(min-width: 851px)').matches&&!navigator.connection?.saveData){video.play().catch(()=>{});}
+});

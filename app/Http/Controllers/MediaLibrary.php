@@ -12,5 +12,13 @@ class MediaLibrary {
   $path=$file->store('approved-media','local');abort_unless($path,500);
   MediaAsset::create(['path'=>$path,'mime'=>$mime,'alt'=>$d['alt'],'credit'=>$d['credit'],'status'=>'published']);return back()->with('message','Approved media uploaded.');
  }
- public function show(MediaAsset $asset){abort_unless($asset->status==='published',404);abort_unless(Storage::disk('local')->exists($asset->path),404);return Storage::disk('local')->response($asset->path,null,['Content-Type'=>$asset->mime,'Cache-Control'=>'public, max-age=3600','X-Content-Type-Options'=>'nosniff'],'inline');}
+ public function storeVideo(Request $r){
+  abort_unless($r->user()?->role==='admin',403);
+  $d=$r->validate(['video'=>'required|file|mimetypes:video/mp4,video/webm|max:40960','alt'=>'required|string|max:255','credit'=>'required|string|max:255','approved'=>'accepted']);
+  $file=$r->file('video');$mime=$file->getMimeType();abort_unless(in_array($mime,['video/mp4','video/webm'],true),422);
+  $path=$file->store('approved-media','local');abort_unless($path,500);
+  MediaAsset::create(['path'=>$path,'mime'=>$mime,'alt'=>$d['alt'],'credit'=>$d['credit'],'status'=>'published']);return back()->with('message','Approved video uploaded.');
+ }
+ public function archive(Request $r,MediaAsset $asset){abort_unless($r->user()?->role==='admin',403);$asset->update(['status'=>'draft']);return back();}
+ public function show(MediaAsset $asset){abort_unless($asset->status==='published',404);abort_unless(Storage::disk('local')->exists($asset->path),404);return response()->file(Storage::disk('local')->path($asset->path),['Content-Type'=>$asset->mime,'Cache-Control'=>'public, max-age=3600','X-Content-Type-Options'=>'nosniff']);}
 }
