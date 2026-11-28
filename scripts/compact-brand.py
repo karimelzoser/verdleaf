@@ -2,39 +2,41 @@ from pathlib import Path
 from PIL import Image, ImageDraw
 import json,re
 root=Path('preview'); media=root/'media'
-def crop_lockup(src,dest):
- im=Image.open(src).convert('RGBA')
- alpha=im.getchannel('A'); box=alpha.point(lambda a:255 if a>70 else 0).getbbox()
- if not box:raise RuntimeError('Empty logo')
- im=im.crop(box); w,h=im.size
- a=im.getchannel('A'); rows=[sum(v>85 for v in a.crop((0,y,w,y+1)).getdata()) for y in range(h)]
- # Find the separating whitespace in the original stacked mark. Retain original glyphs and colours.
- candidates=[]; start=None
- for y in range(int(h*.28),int(h*.86)):
-  if rows[y]<=max(1,int(w*.006)):
-   if start is None:start=y
-  elif start is not None:
-   candidates.append((y-start,start,y));start=None
- if start is not None:candidates.append((int(h*.86)-start,start,int(h*.86)))
- if not candidates:raise RuntimeError('No clear separating gap in original logo')
- _,lo,hi=max(candidates,key=lambda t:(t[0],-abs((t[1]+t[2])/2-h*.58)))
- split=(lo+hi)//2
- def trim(x):return x.crop(x.getchannel('A').point(lambda a:255 if a>70 else 0).getbbox())
- mark=trim(im.crop((0,0,w,split))); word=trim(im.crop((0,split,w,h)))
- print('LOGO',src.name,'source',im.size,'split',split,'gap',hi-lo,'mark',mark.size,'word',word.size,flush=True)
- if mark.height<10 or word.height<10:raise RuntimeError('Unexpected logo partition')
- # The emblem and original text are aligned optically; no glyphs are redrawn.
- mh=116; wh=min(92,round(word.height*mh/mark.height*1.4))
- wh=max(48,wh)
+def crop_lockup(dest,dark=False):
+ # The supplied 355x354 circular company seal contains a green leaf symbol
+ # and a two-line wordmark. Extract those exact original components.
+ im=Image.open(media/'logo.webp').convert('RGB')
+ w,h=im.size
+ def extract(bounds,leaf=False):
+  x0,y0,x1,y1=bounds
+  crop=im.crop((round(x0*w/355),round(y0*h/354),round(x1*w/355),round(y1*h/354)))
+  out=Image.new('RGBA',crop.size)
+  pixels=[]
+  for r,g,b in crop.getdata():
+   if leaf:
+    # Recover antialiasing from the white original background.
+    a=min(255,max(0,round((255-b)*255/196)))
+    if a<8:pixels.append((0,0,0,0));continue
+    rgb=tuple(max(0,min(255,round((v-255*(1-a/255))/(a/255)))) for v in (r,g,b))
+    pixels.append((*rgb,a))
+   else:
+    a=255-min(r,g,b)
+    pixels.append((245,248,235,a) if dark else (24,42,28,a))
+  out.putdata(pixels)
+  return out.crop(out.getchannel('A').point(lambda x:255 if x>20 else 0).getbbox())
+ mark=extract((65,102,291,192),True)
+ word=extract((46,196,309,301))
+ mh=72;wh=97
  mark=mark.resize((round(mark.width*mh/mark.height),mh),Image.Resampling.LANCZOS)
  word=word.resize((round(word.width*wh/word.height),wh),Image.Resampling.LANCZOS)
- gap=16; pad=5
- out=Image.new('RGBA',(mark.width+word.width+gap+2*pad,mh+2*pad))
- out.alpha_composite(mark,(pad,pad));out.alpha_composite(word,(pad+mark.width+gap,pad+(mh-wh)//2))
+ gap=18;pad=5;H=max(mh,wh)+pad*2
+ out=Image.new('RGBA',(mark.width+word.width+gap+2*pad,H))
+ out.alpha_composite(mark,(pad,(H-mh)//2));out.alpha_composite(word,(pad+mark.width+gap,(H-wh)//2))
  out.save(dest)
+ print('LOGO horizontal',out.size,flush=True)
  return out
-light=crop_lockup(media/'logo-transparent.png',media/'logo-horizontal.png')
-dark=crop_lockup(media/'logo-light.png',media/'logo-horizontal-light.png')
+light=crop_lockup(media/'logo-horizontal.png')
+dark=crop_lockup(media/'logo-horizontal-light.png',True)
 p=root/'index.html';s=p.read_text()
 s=s.replace('id="logo" src="media/logo-transparent.png" alt="Verdleaf Global" width="76" height="76"','id="logo" src="media/logo-horizontal.png" alt="Verdleaf Global" width="%s" height="%s"'%light.size)
 s=s.replace('class="menu-toggle">Menu</button>','class="menu-toggle" aria-label="Open navigation"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="menu-line-top" d="M4 6h16"/><path class="menu-line-mid" d="M4 12h16"/><path class="menu-line-bottom" d="M4 18h16"/></svg></button>')
