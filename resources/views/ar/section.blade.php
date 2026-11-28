@@ -1,5 +1,5 @@
 @extends('ar.layout')
 @section('title',$title.' | فيردليف')
-@section('alternate',route('section',$section))
+@if($entries->isNotEmpty())@section('alternate',route('section',$section))@else @section('noindex','1')@endif
 @section('content')<section class="wrap"><h1>{{$title}}.</h1>@forelse($entries as $e)<article class="chapter"><h2>{{$e->title_ar}}</h2>@if($e->status==='draft')<p>مسودة قيد المراجعة.</p>@endif <p class="prose">{{$e->body_ar}}</p>@if($e->source_url)<a href="{{$e->source_url}}">المصدر أو المستند</a>@endif</article>@empty<p>سيتم نشر المعلومات العربية بعد مراجعتها واعتمادها.</p>@endforelse
 @if($section==='contact')<a class="primary" href="{{route('ar.enquiry','contact')}}">نموذج التواصل</a>@endif</section>@endsection
