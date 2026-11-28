@@ -2,7 +2,7 @@ name: V7 compact horizontal brand header
 on:
   push:
     branches: [main]
-    paths: ['scripts/compact-brand.py','.github/workflows/compact-brand.yml']
+    paths: ['scripts/compact-brand.py','scripts/check-header.mjs','.github/workflows/compact-brand.yml']
   workflow_dispatch:
 permissions:
   contents: write
