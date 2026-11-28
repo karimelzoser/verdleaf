@@ -545,6 +545,6 @@
       "modified": "Resized and converted to WebP; no compositional manipulation."
     }
   },
-  "logoHorizontal": "media/logo-horizontal.png",
-  "logoHorizontalLight": "media/logo-horizontal-light.png"
+  "logoHorizontal": "media/brand-lockup.svg",
+  "logoHorizontalLight": "media/brand-lockup-light.svg"
 }

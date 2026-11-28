@@ -10,3 +10,6 @@ header .static-head img{width:150px;height:46px;object-fit:contain}.static-head{
 @media(max-width:1150px){header nav.shell{min-height:54px;padding:4px 0;gap:8px}header .brand img{width:140px;height:42px}header .nav-links.open{padding:6px 0;gap:1px}header .nav-links a,header .nav-links .language{padding:8px}header .menu-toggle{display:grid;place-items:center}}
 @media(max-width:600px){.topline .shell{justify-content:center;padding:3px 0;white-space:nowrap}.topline a{display:none}.topline{font-size:8px;letter-spacing:.04em}header .brand img{width:132px;height:39px}header nav.shell{min-height:51px}.living-hero{min-height:clamp(415px,64svh,560px)}}
 html[dir=rtl] header .brand img{object-position:right center}
+
+/* V8 refined vector identity: no circular border, no raster scaling. */
+header .brand img{width:182px;height:48px;object-fit:contain;object-position:left center}header .static-head img{content:url("media/brand-lockup.svg");width:170px;height:45px}html[dir=rtl] header .brand img{object-position:right center}@media(max-width:1150px){header .brand img{width:165px;height:44px}}@media(max-width:600px){header .brand img{width:151px;height:40px}header .static-head img{width:142px;height:38px}}
