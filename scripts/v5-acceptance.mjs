@@ -1,0 +1,36 @@
+import {chromium} from 'playwright';
+import {spawn} from 'node:child_process';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const server=spawn('python',['-m','http.server','8080','--directory','preview'],{stdio:'ignore'});
+const browser=await chromium.launch();
+fs.mkdirSync('visual-evidence',{recursive:true});
+try{
+ for(let i=0;i<30;i++){try{if((await fetch('http://localhost:8080')).ok)break}catch{}await new Promise(r=>setTimeout(r,250))}
+ for(const width of [320,390,768,1024,1440,1920]){
+  const page=await browser.newPage({viewport:{width,height:width<821?844:900},deviceScaleFactor:1,reducedMotion:'reduce'});
+  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  const overflow=async name=>{const d=await page.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));assert(d.scroll<=d.width+2,name+' '+width+' overflow '+JSON.stringify(d))};
+  const go=async hash=>{await page.goto('http://localhost:8080/index.html?demo=1#'+hash);await page.locator('.view:not([hidden])').waitFor();await page.waitForTimeout(120);await overflow(hash)};
+  await go('home');assert.equal(await page.locator('.living-hero h1').innerText(),'It all begins\nwith the land.');
+  await page.locator('#heroImage').evaluate(el=>{if(!el.style.backgroundImage)throw Error('No hero photograph')});await page.locator('#labForms [data-lab="powder"]').click();assert.equal(await page.locator('#labForms [data-lab="powder"]').getAttribute('aria-pressed'),'true');await page.locator('#labForms [data-lab="whole"]').click();await page.evaluate(()=>scrollTo(0,0));
+  await page.screenshot({path:'visual-evidence/home-'+width+'-fold.png',animations:'disabled'});
+  if([390,1440].includes(width))await page.screenshot({path:'visual-evidence/home-'+width+'-full.png',fullPage:true,animations:'disabled'});
+  if(width<=1150){await page.locator('#menuToggle').click();assert(await page.locator('#navLinks').isVisible());await page.locator('#navLinks a[href="#company"]').click();await page.locator('#company:not([hidden])').waitFor();assert(!(await page.locator('#navLinks').isVisible()));await go('home')}
+  await page.locator('#heroQuery').fill('Hibiscus');await page.locator('#heroSearch button').click();await page.locator('#catalogue:not([hidden])').waitFor();assert.equal(await page.locator('#cards .product-card').count(),1);await page.locator('#cards .image-link').click();await page.locator('#product:not([hidden])').waitFor();await overflow('product from search');await page.locator('#addItem').click();
+  await page.locator('.product-info a[href="#desk"]').click();await page.locator('#desk:not([hidden])').waitFor();assert.equal(await page.locator('#count').innerText(),'1');await overflow('desk populated');await page.locator('#sendDemo').click();assert((await page.locator('#demoStatus').innerText()).includes('Synthetic request saved'));
+  for(const view of ['catalogue','company','quality','calendar','meet','contact','solutions','product/14']){
+   await go(view);
+   if([390,1440].includes(width))await page.screenshot({path:'visual-evidence/'+view.replace('/','-')+'-'+width+'.png',fullPage:true,animations:'disabled'});
+  }
+  await page.goto('http://localhost:8080/index.html?lang=ar#home');assert.equal(await page.locator('html').getAttribute('dir'),'rtl');await overflow('Arabic home');if([390,1440].includes(width))await page.screenshot({path:'visual-evidence/arabic-'+width+'.png',fullPage:true,animations:'disabled'});
+  await page.goto('http://localhost:8080/products/chamomile/');assert((await page.locator('h1').innerText()).includes('Chamomile'));await overflow('standalone product');await page.goto('http://localhost:8080/ar/products/chamomile/');assert.equal(await page.locator('html').getAttribute('dir'),'rtl');await overflow('standalone Arabic product');await page.goto('http://localhost:8080/admin-demo.html');await overflow('admin overview');await page.evaluate(()=>location.hash='requests');await page.locator('#search').fill('Synthetic website buyer');assert.equal(await page.locator('#records tbody tr').count(),1);await page.locator('[data-quote]').click();await page.waitForFunction(()=>document.querySelector('#modules a.active')?.hash==='#quotes');assert.equal(await page.locator('#records tbody tr').count(),1);await page.evaluate(()=>location.hash='requests');await page.locator('#search').fill('Synthetic website buyer');await page.locator('[data-sample]').click();await page.waitForFunction(()=>document.querySelector('#modules a.active')?.hash==='#samples');assert.equal(await page.locator('#records tbody tr').count(),1);await page.evaluate(()=>location.hash='overview');await page.waitForFunction(()=>document.querySelector('#modules a.active')?.hash==='#overview');
+  if([390,1440].includes(width))await page.screenshot({path:'visual-evidence/admin-overview-'+width+'.png',fullPage:true,animations:'disabled'});
+  for(const module of ['products','requests','quotes','samples','tasks','content','certificates','calendar','media','seo','security','settings','activity']){
+   await page.evaluate(m=>location.hash=m,module);await page.waitForFunction(m=>document.querySelector('#modules a.active')?.hash==='#'+m,module);await overflow('admin '+module);
+   if([390,1440].includes(width))await page.screenshot({path:'visual-evidence/admin-'+module+'-'+width+'.png',fullPage:true,animations:'disabled'});
+  }
+  await page.evaluate(()=>location.hash='products');await page.waitForFunction(()=>document.querySelector('#add'));await page.locator('#add').click();await page.locator('input[name=name]').fill('Browser test product');await page.locator('input[name=category]').fill('Demo');await page.locator('input[name=forms]').fill('Whole');await page.locator('#editForm .primary').click();await page.locator('#search').fill('Browser test product');assert.equal(await page.locator('#records tbody tr').count(),1);await page.reload();await page.locator('#search').fill('Browser test product');assert.equal(await page.locator('#records tbody tr').count(),1);assert.deepEqual(errors,[]);await page.close();console.log('PASS all pages and admin modules at '+width+'px');
+ }
+ const motion=await browser.newPage({viewport:{width:1440,height:900},reducedMotion:'no-preference'});await motion.goto('http://localhost:8080/#home');await motion.waitForFunction(()=>!document.documentElement.classList.contains('booting'));await motion.waitForTimeout(500);const first=await motion.locator('#landMotion').evaluate(c=>c.toDataURL());await motion.waitForTimeout(650);const second=await motion.locator('#landMotion').evaluate(c=>c.toDataURL());assert.notEqual(first,second,'ambient canvas must change');await motion.locator('#landPause').click();await motion.waitForTimeout(100);const frozen=await motion.locator('#landMotion').evaluate(c=>c.toDataURL());await motion.waitForTimeout(400);assert.equal(await motion.locator('#landMotion').evaluate(c=>c.toDataURL()),frozen);await motion.screenshot({path:'visual-evidence/ambient-motion.png',animations:'allow'});await motion.close();console.log('PASS live canvas and pause');
+}finally{await browser.close();server.kill()}

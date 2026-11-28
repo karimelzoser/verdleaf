@@ -1,0 +1,28 @@
+name: V5 Living Land acceptance
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/v5-acceptance.yml','scripts/v5-acceptance.mjs']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  visual:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: preview
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+      - run: node --check preview/site.js && node --check preview/living.js && node --check preview/admin-demo.js && node scripts/v5-acceptance.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verdleaf-v5-visual-evidence
+          path: visual-evidence/
