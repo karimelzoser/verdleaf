@@ -1,0 +1,32 @@
+name: V6 responsive compact review
+on:
+  workflow_run:
+    workflows: ['V6 compact UX and photographic references']
+    types: [completed]
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/v6-review.mjs','.github/workflows/v6-review.yml']
+permissions:
+  contents: read
+jobs:
+  review:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: preview
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+      - run: node --check preview/site.js && node --check preview/admin-demo.js && node scripts/v6-review.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verdleaf-v6-compact-evidence
+          path: visual-evidence/
