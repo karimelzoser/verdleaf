@@ -26,11 +26,13 @@ Route::post('/enquire/{type}',[\App\Http\Controllers\GeneralEnquiries::class,'st
 Route::get('/{section}/{slug}',[PublicSite::class,'entry'])->where('section','exhibitions|visits|insights|certifications|markets|industries|farms|facilities|responsible-sourcing|downloads')->name('entry');
 Route::get('/robots.txt',[PublicSite::class,'robots']);
 Route::get('/sitemap.xml',[PublicSite::class,'sitemap']);
-Route::get('/login',[Admin::class,'login'])->name('login');
-Route::post('/login',[Admin::class,'authenticate'])->middleware('throttle:5,1');
-Route::post('/logout',[Admin::class,'logout'])->middleware('auth')->name('logout');
-Route::get('/staff/attachments/{sourcingRequest}',[\App\Http\Controllers\RequestAttachments::class,'download'])->middleware('auth')->name('request.attachment');
-Route::prefix('staff')->middleware('auth')->group(function(){
+Route::get('/login',[\App\Http\Controllers\StaffAuth::class,'login'])->name('login');
+Route::post('/login',[\App\Http\Controllers\StaffAuth::class,'authenticate'])->middleware('throttle:5,1');
+Route::get('/login/verify',[\App\Http\Controllers\StaffAuth::class,'challenge'])->name('staff.challenge');
+Route::post('/login/verify',[\App\Http\Controllers\StaffAuth::class,'verify'])->middleware('throttle:5,1')->name('staff.verify');
+Route::post('/logout',[\App\Http\Controllers\StaffAuth::class,'logout'])->middleware('auth')->name('logout');
+Route::get('/staff/attachments/{sourcingRequest}',[\App\Http\Controllers\RequestAttachments::class,'download'])->middleware(['auth',\App\Http\Middleware\StaffSession::class])->name('request.attachment');
+Route::prefix('staff')->middleware(['auth',\App\Http\Middleware\StaffSession::class])->group(function(){
  Route::get('/',[\App\Http\Controllers\Staff::class,'index'])->name('staff');
  Route::post('/draft',[\App\Http\Controllers\Staff::class,'draft'])->name('staff.draft');
  Route::post('/products/{product}/approve',[\App\Http\Controllers\Staff::class,'approveProduct'])->name('staff.approve.product');
@@ -38,7 +40,7 @@ Route::prefix('staff')->middleware('auth')->group(function(){
  Route::post('/sourcing/{sourcingRequest}',[\App\Http\Controllers\Staff::class,'sourcingStatus'])->name('staff.sourcing.status');
  Route::post('/general/{enquiry}',[\App\Http\Controllers\Staff::class,'generalStatus'])->name('staff.general.status');
 });
-Route::prefix('admin')->middleware('auth')->group(function(){
+Route::prefix('admin')->middleware(['auth',\App\Http\Middleware\StaffSession::class,\App\Http\Middleware\AdminRole::class])->group(function(){
  Route::get('/documents',[\App\Http\Controllers\PublicDocuments::class,'index'])->name('admin.documents');
  Route::post('/documents',[\App\Http\Controllers\PublicDocuments::class,'store'])->name('admin.documents.store');
  Route::post('/documents/{document}/archive',[\App\Http\Controllers\PublicDocuments::class,'archive'])->name('admin.documents.archive');
@@ -56,7 +58,9 @@ Route::prefix('admin')->middleware('auth')->group(function(){
  Route::post('/media/video',[\App\Http\Controllers\MediaLibrary::class,'storeVideo'])->name('admin.media.video');
  Route::post('/media/{asset}/archive',[\App\Http\Controllers\MediaLibrary::class,'archive'])->name('admin.media.archive');
  Route::post('/enquiries/{enquiry}',[\App\Http\Controllers\GeneralEnquiries::class,'status'])->name('admin.enquiry.status');
- Route::get('/',[Admin::class,'index'])->name('admin');
+ Route::get('/',[\App\Http\Controllers\Dashboard::class,'index'])->name('admin');
+ Route::get('/security',[\App\Http\Controllers\Dashboard::class,'security'])->name('admin.security');
+ Route::get('/operations',[Admin::class,'index'])->name('admin.operations');
  Route::post('/products',[Admin::class,'createProduct'])->name('admin.product.create');
  Route::get('/products/{product}',[Admin::class,'edit'])->name('admin.product');
  Route::post('/products/{product}',[Admin::class,'save'])->name('admin.product.save');

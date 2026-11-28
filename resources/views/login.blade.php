@@ -1,2 +1,4 @@
-@extends('layout')
-@section('content')<section class="wrap narrow"><h1>Staff login.</h1><form method="post" action="{{route('login')}}">@csrf<label>Email<input name="email" type="email" required autocomplete="username"></label><label>Password<input name="password" type="password" required autocomplete="current-password"></label><button class="primary">Sign in</button></form></section>@endsection
+@extends('admin.auth-layout')
+@section('content')
+<h1>Staff sign in</h1><p>Manage ingredients, content and export enquiries securely.</p><form method="post" action="{{route('login')}}">@csrf<label>Email<input name="email" type="email" autocomplete="username" required autofocus maxlength="255"></label><label>Password<input name="password" type="password" autocomplete="current-password" required maxlength="128"></label><button class="primary">Continue</button></form><a href="{{route('home')}}">Return to website</a>
+@endsection
