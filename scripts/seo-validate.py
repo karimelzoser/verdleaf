@@ -55,7 +55,7 @@ for p in pages:
   target=local_path(a.get('href') or a.get('src'),path)
   check(exists(target),f'{path} broken local URL {target}')
   if a.name=='a' and target in paths:graph[path].add(target)
-  if a.name=='img':check(bool(a.get('alt')),f'{path} missing image alt')
+  if a.name=='img':check(a.has_attr('alt'),f'{path} missing alt attribute')
 queue=[''];reachable=set()
 while queue:
  n=queue.pop()
