@@ -544,5 +544,7 @@
       "height": 825,
       "modified": "Resized and converted to WebP; no compositional manipulation."
     }
-  }
+  },
+  "logoHorizontal": "media/logo-horizontal.png",
+  "logoHorizontalLight": "media/logo-horizontal-light.png"
 }
