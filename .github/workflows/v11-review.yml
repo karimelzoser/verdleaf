@@ -17,6 +17,10 @@ jobs:
           path: preview
       - run: pip install beautifulsoup4
       - run: python scripts/seo-validate.py preview
+      - name: Validate separate sitemap candidate (not deployed)
+        run: |
+          python scripts/seo-validate.py preview --production-output /tmp/verdleaf-release-candidate --approved-domain https://verdleaf.com/ --approve-indexing
+          python -c "import xml.etree.ElementTree as E; r=E.parse('/tmp/verdleaf-release-candidate/sitemap.xml'); assert len(r.getroot())==120; print('PASS 120 candidate production sitemap URLs')"
   browser:
     runs-on: ubuntu-24.04
     steps:

@@ -63,6 +63,10 @@ while queue:
  reachable.add(n);queue.extend(graph.get(n,set())-reachable)
 check(reachable==paths,f'unreachable pages: {sorted(paths-reachable)}')
 check(len(pages)==len(paths), 'Duplicate manifest routes')
+check(len(pages)==120, 'Expected 120 page inventory for V11')
+redirects=json.loads((root/'seo-migration.json').read_text())
+for r in redirects['routes']:
+ check(r['new'].lstrip('/') in paths, f'Migration destination missing: {r["new"]}')
 for p in ['admin-demo.html','review.html','photography.html']:
  s=BeautifulSoup((root/p).read_text(),'html.parser')
  check('noindex' in s.select_one('meta[name=robots]').get('content',''),f'{p} missing noindex')
