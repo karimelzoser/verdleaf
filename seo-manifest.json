@@ -88,6 +88,13 @@
       "group": "application"
     },
     {
+      "path": "ar/contact-us/",
+      "locale": "ar",
+      "title": "تواصل مع فيردليف جلوبال | استفسارات التوريد",
+      "description": "تواصل مع فريق تصدير فيردليف جلوبال في الفيوم، مصر، للاستفسار عن توريد الأعشاب والتوابل والعينات والمواصفات والمستندات.",
+      "group": "contact"
+    },
+    {
       "path": "ar/crop-calendar/",
       "locale": "ar",
       "title": "التخطيط للمواسم الزراعية للمكونات النباتية | Verdleaf Global",
@@ -457,6 +464,13 @@
       "title": "دليل توريد المكونات النباتية بالجملة | Verdleaf Global",
       "description": "أعد استفساراً عن عرض سعر أو عينة بتحديد هوية المنتج والشكل والكمية والوجهة والمتطلبات الفنية.",
       "group": "guide"
+    },
+    {
+      "path": "contact-us/",
+      "locale": "en",
+      "title": "Contact Verdleaf Global | Bulk Ingredient Enquiries",
+      "description": "Contact Verdleaf Global in Fayoum, Egypt, for bulk herb and spice enquiries, samples, technical documentation and business visits.",
+      "group": "contact"
     },
     {
       "path": "crop-calendar/",

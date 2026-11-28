@@ -1,0 +1,32 @@
+{
+  "status": "candidate; not active",
+  "source": "https://verdleaf.com/",
+  "routes": [
+    {
+      "old": "/",
+      "new": "/",
+      "action": "preserve"
+    },
+    {
+      "old": "/products/",
+      "new": "/products/",
+      "action": "preserve"
+    },
+    {
+      "old": "/contact-us/",
+      "new": "/contact-us/",
+      "action": "preserve"
+    },
+    {
+      "old": "/about-us/",
+      "new": "/about/",
+      "action": "301"
+    }
+  ],
+  "unresolved": [
+    "Original sitemap",
+    "Indexed URL export",
+    "Backlink and image/PDF URL inventory",
+    "Server-side redirect configuration"
+  ]
+}
