@@ -15,7 +15,7 @@ class PublicDocuments{
   PublicDocument::create(array_intersect_key($d,array_flip(['title','kind','revision','expires_at']))+['path'=>$path,'status'=>'published']);return back()->with('message','Public PDF uploaded.');
  }
  public function download(PublicDocument $document){
-  abort_unless($document->status==='published'&&Storage::disk('local')->exists($document->path),404);
+  abort_unless($document->status==='published'&&($document->kind!=='certificate'||!$document->expires_at||!$document->expires_at->lt(today()))&&Storage::disk('local')->exists($document->path),404);
   return Storage::disk('local')->download($document->path,(Str::slug($document->title)?:'document').'.pdf',['Content-Type'=>'application/pdf','X-Content-Type-Options'=>'nosniff','Cache-Control'=>'no-store']);
  }
  public function archive(Request $r,PublicDocument $document){$this->admin($r);$document->update(['status'=>'draft']);return back();}
