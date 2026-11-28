@@ -10,7 +10,9 @@ class CommercialWorkflowTest extends TestCase{
   $this->get('/admin/commercial')->assertRedirect('/login');
   $this->actingAs($admin);
   $request=SourcingRequest::create(['reference'=>'QA-COMMERCIAL','idempotency_key'=>hash('sha256','qa-commercial'),'company'=>'Synthetic buyer','email'=>'buyer@example.test','contact_name'=>'QA','country'=>'Egypt','status'=>'new','consent_at'=>now()]);
-  $request->items()->create(['product_name'=>'Chamomile','form'=>'Whole','grade'=>'Reference','quantity_kg'=>10.125,'purposes'=>['quote']]);
+  $p=\App\Models\Product::create(['name'=>'QA Chamomile','slug'=>'qa-chamomile','category'=>'Flowers','status'=>'draft']);
+  $v=\App\Models\Variant::create(['product_id'=>$p->id,'sku'=>'QA-COMMERCIAL-1','form'=>'Whole','status'=>'draft']);
+  $request->items()->create(['variant_id'=>$v->id,'product_name'=>'Chamomile','form'=>'Whole','grade'=>'Reference','quantity_kg'=>10.125,'purposes'=>['quote']]);
   $this->post('/admin/commercial',['kind'=>'quote','title'=>'Test quotation','sourcing_request_id'=>$request->id])->assertRedirect();
   $q=CommercialCase::where('kind','quote')->firstOrFail();
   $this->post('/admin/commercial/'.$q->id.'/status',['status'=>'sent'])->assertStatus(409);
