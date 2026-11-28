@@ -10,7 +10,7 @@ class PublicDocuments{
  public function store(Request $r){
   $this->admin($r);
   $d=$r->validate(['pdf'=>'required|file|mimes:pdf|max:10240','title'=>'required|string|max:160','kind'=>'required|in:certificate,tds,catalogue,company-profile,public-sample-coa','revision'=>'nullable|string|max:100','expires_at'=>'nullable|date','approved'=>'accepted']);
-  $file=$r->file('pdf');$handle=fopen($file->getRealPath(),'rb');$magic=fread($handle,5);fclose($handle);abort_unless($magic==='%PDF-',422);
+  $file=$r->file('pdf');$handle=fopen($file->getRealPath(),'rb');$magic=fread($handle,5);fclose($handle);if($magic!=='%PDF-')throw \Illuminate\Validation\ValidationException::withMessages(['pdf'=>'The uploaded file is not a valid PDF.']);
   $path=$file->store('public-documents','local');abort_unless($path,500);
   PublicDocument::create(array_intersect_key($d,array_flip(['title','kind','revision','expires_at']))+['path'=>$path,'status'=>'published']);return back()->with('message','Public PDF uploaded.');
  }
