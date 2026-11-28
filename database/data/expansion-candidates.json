@@ -1,0 +1,250 @@
+{
+  "note": "Potential new product families and possible forms for commercial review. None is confirmed supply. Do not publish or expose as stock until validated.",
+  "products": [
+    {
+      "name": "Oregano",
+      "name_ar": "أوريجانو",
+      "category": "Herbs & leaves",
+      "forms": [
+        "Whole leaves",
+        "Cut",
+        "Powder"
+      ]
+    },
+    {
+      "name": "Lavender",
+      "name_ar": "لافندر",
+      "category": "Flowers & botanicals",
+      "forms": [
+        "Whole flowers",
+        "Cut"
+      ]
+    },
+    {
+      "name": "Senna",
+      "name_ar": "سنا",
+      "category": "Herbs & leaves",
+      "forms": [
+        "Leaves",
+        "Cut"
+      ]
+    },
+    {
+      "name": "Lemon balm",
+      "name_ar": "مليسة",
+      "category": "Herbs & leaves",
+      "forms": [
+        "Whole leaves",
+        "Cut"
+      ]
+    },
+    {
+      "name": "Bay leaves",
+      "name_ar": "ورق لورا",
+      "category": "Herbs & leaves",
+      "forms": [
+        "Whole",
+        "Broken"
+      ]
+    },
+    {
+      "name": "Stevia",
+      "name_ar": "ستيفيا",
+      "category": "Herbs & leaves",
+      "forms": [
+        "Leaves",
+        "Powder"
+      ]
+    },
+    {
+      "name": "Sidr",
+      "name_ar": "سدر",
+      "category": "Herbs & leaves",
+      "forms": [
+        "Leaves",
+        "Powder"
+      ]
+    },
+    {
+      "name": "Rose petals",
+      "name_ar": "بتلات ورد",
+      "category": "Flowers & botanicals",
+      "forms": [
+        "Petals",
+        "Cut"
+      ]
+    },
+    {
+      "name": "Jasmine",
+      "name_ar": "ياسمين",
+      "category": "Flowers & botanicals",
+      "forms": [
+        "Flowers"
+      ]
+    },
+    {
+      "name": "Cumin",
+      "name_ar": "كمون",
+      "category": "Seeds & spices",
+      "forms": [
+        "Whole",
+        "Ground"
+      ]
+    },
+    {
+      "name": "Black pepper",
+      "name_ar": "فلفل أسود",
+      "category": "Seeds & spices",
+      "forms": [
+        "Whole",
+        "Ground"
+      ]
+    },
+    {
+      "name": "Turmeric",
+      "name_ar": "كركم",
+      "category": "Seeds & spices",
+      "forms": [
+        "Slices",
+        "Powder"
+      ]
+    },
+    {
+      "name": "Chilli",
+      "name_ar": "فلفل حار",
+      "category": "Seeds & spices",
+      "forms": [
+        "Whole",
+        "Flakes",
+        "Powder"
+      ]
+    },
+    {
+      "name": "Flaxseed",
+      "name_ar": "بذور كتان",
+      "category": "Seeds & spices",
+      "forms": [
+        "Whole",
+        "Ground"
+      ]
+    },
+    {
+      "name": "Sunflower seeds",
+      "name_ar": "بذور عباد الشمس",
+      "category": "Seeds & spices",
+      "forms": [
+        "Whole"
+      ]
+    },
+    {
+      "name": "Mustard",
+      "name_ar": "خردل",
+      "category": "Seeds & spices",
+      "forms": [
+        "Whole",
+        "Ground"
+      ]
+    },
+    {
+      "name": "Paprika",
+      "name_ar": "بابريكا",
+      "category": "Seeds & spices",
+      "forms": [
+        "Powder"
+      ]
+    },
+    {
+      "name": "Dried tomato",
+      "name_ar": "طماطم مجففة",
+      "category": "Dehydrated produce",
+      "forms": [
+        "Slices",
+        "Powder"
+      ]
+    },
+    {
+      "name": "Dried carrot",
+      "name_ar": "جزر مجفف",
+      "category": "Dehydrated produce",
+      "forms": [
+        "Flakes",
+        "Powder"
+      ]
+    },
+    {
+      "name": "Orange peel",
+      "name_ar": "قشر برتقال",
+      "category": "Dehydrated produce",
+      "forms": [
+        "Cut",
+        "Powder"
+      ]
+    },
+    {
+      "name": "Ginger",
+      "name_ar": "زنجبيل",
+      "category": "Roots & resins",
+      "forms": [
+        "Slices",
+        "Powder"
+      ]
+    },
+    {
+      "name": "Gum arabic",
+      "name_ar": "صمغ عربي",
+      "category": "Roots & resins",
+      "forms": [
+        "Pieces",
+        "Powder"
+      ]
+    },
+    {
+      "name": "Lentils",
+      "name_ar": "عدس",
+      "category": "Grains & legumes",
+      "forms": [
+        "Whole"
+      ]
+    },
+    {
+      "name": "Chickpeas",
+      "name_ar": "حمص",
+      "category": "Grains & legumes",
+      "forms": [
+        "Whole"
+      ]
+    },
+    {
+      "name": "Fava beans",
+      "name_ar": "فول",
+      "category": "Grains & legumes",
+      "forms": [
+        "Whole"
+      ]
+    },
+    {
+      "name": "Black seed oil",
+      "name_ar": "زيت حبة البركة",
+      "category": "Natural oils",
+      "forms": [
+        "Oil"
+      ]
+    },
+    {
+      "name": "Peppermint oil",
+      "name_ar": "زيت نعناع فلفلي",
+      "category": "Natural oils",
+      "forms": [
+        "Oil"
+      ]
+    },
+    {
+      "name": "Chamomile oil",
+      "name_ar": "زيت بابونج",
+      "category": "Natural oils",
+      "forms": [
+        "Oil"
+      ]
+    }
+  ]
+}

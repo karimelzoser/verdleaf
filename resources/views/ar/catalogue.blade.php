@@ -1,0 +1,4 @@
+@extends('ar.layout')
+@section('title','المنتجات | فيردليف')
+@section('alternate',route('products'))
+@section('content')<section class="wrap"><h1>استكشف المنتجات.</h1><form method="get" class="search"><label>اسم المنتج<input name="q" type="search" value="{{$q}}"></label><button class="primary">بحث</button></form><div class="cards">@forelse($products as $p)<article><h3><a href="{{route('ar.product',$p->slug)}}">{{$p->name_ar}}</a></h3><p>{{$p->botanical_name}}</p></article>@empty<p>لا توجد نتائج باللغة العربية لهذه الكلمات. يمكنك تصفح الكتالوج باللغة الإنجليزية.</p>@endforelse</div><div class="actions">@if($products->previousPageUrl())<a href="{{$products->previousPageUrl()}}">السابق</a>@endif @if($products->nextPageUrl())<a href="{{$products->nextPageUrl()}}">التالي</a>@endif</div></section>@endsection

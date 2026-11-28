@@ -1,0 +1,39 @@
+{
+  "retrieved": "2026-11-27",
+  "source": "https://verdleaf.com/",
+  "claims": [
+    {
+      "field": "heritage",
+      "value": "Family business heritage since 1995",
+      "review": "Confirm legal incorporation versus family business history"
+    },
+    {
+      "field": "email",
+      "value": "info@verdleaf.com",
+      "review": "Confirm current export contact"
+    },
+    {
+      "field": "phone",
+      "value": [
+        "+201012399012",
+        "+201066650973"
+      ],
+      "review": "Confirm routing and consent for publication"
+    },
+    {
+      "field": "address",
+      "value": "El Mesla Square, Insurance Tower, first floor, Fayoum, Egypt",
+      "review": "Confirm current office address"
+    },
+    {
+      "field": "products",
+      "value": "Herbs, spices, seeds; organic and conventional advertised",
+      "review": "Confirm actual grades, scope and availability"
+    },
+    {
+      "field": "markets",
+      "value": "US and EU mentioned on current homepage",
+      "review": "Verify shipment history before publishing"
+    }
+  ]
+}

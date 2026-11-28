@@ -1,0 +1,2 @@
+@extends('layout')
+@section('content')<section class="wrap"><h1>Request received.</h1><p>Your reference: <strong>{{$reference}}</strong></p><p>Your sourcing request is recorded for review.</p><a href="{{route('home')}}">Return home</a></section>@endsection

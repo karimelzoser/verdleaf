@@ -1,0 +1,4 @@
+<?php
+namespace App\Models;
+use Illuminate\Database\Eloquent\Model;
+class UrlRedirect extends Model{protected $fillable=['old_path','new_path'];}
