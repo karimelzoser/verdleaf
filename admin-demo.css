@@ -6,3 +6,5 @@
 
 /* V9 prevent short-page grid tracks from expanding the mobile toolbar. */
 @media(max-width:900px){body{grid-template-rows:auto 1fr;align-content:start}aside{align-self:start;height:auto;min-height:0;align-content:start}.identity{min-width:0}.identity img{flex-shrink:0}.identity span{line-height:1.25}}
+
+.completion{display:inline-flex;background:#e7eddc;padding:4px 9px;border-radius:5px;font-weight:650}.media-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}.media-grid article[hidden]{display:none}.media-grid img{aspect-ratio:1.6}.media-grid article p{font-size:10px;margin:4px 0}.media-grid article a{font-size:11px}.media-grid article strong{font-size:12px}.media-grid article div{overflow-wrap:anywhere}@media(max-width:450px){.media-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.media-grid article div{padding:7px}}
