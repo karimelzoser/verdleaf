@@ -22,7 +22,7 @@ try{
   await snap('home','homepage');await snap('catalogue','catalogue');
   assert.equal(await page.locator('#cards .product-card').count(),12);await page.locator('#showAll').click();
   assert.equal(await page.locator('#cards .product-card,#textCatalogue .text-list a').count(),44);
-  assert.deepEqual(await page.locator('#cards img').evaluateAll(imgs=>imgs.filter(i=>!i.naturalWidth).map(i=>i.src)),[]);
+  await page.locator('#cards img').evaluateAll(imgs=>Promise.all(imgs.map(async i=>{i.loading='eager';try{await i.decode()}catch{}})));assert.deepEqual(await page.locator('#cards img').evaluateAll(imgs=>imgs.filter(i=>!i.naturalWidth).map(i=>i.src)),[]);
   const records=await page.evaluate(()=>window.VERDLEAF_CATALOGUE.map(p=>({id:p.id,name:p.name,category:p.category,forms:p.forms})));
   for(const p of records){
    await page.evaluate(id=>location.hash='product/'+id,p.id);await page.locator('#product:not([hidden]) .product-info h1').waitFor();
