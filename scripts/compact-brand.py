@@ -23,6 +23,11 @@ def crop_lockup(dest,dark=False):
     a=255-min(r,g,b)
     pixels.append((245,248,235,a) if dark else (24,42,28,a))
   out.putdata(pixels)
+  if not leaf:
+   # Remove the circular seal's rim outside the lower wordmark, leaving original type intact.
+   draw=ImageDraw.Draw(out);cw,ch=out.size
+   draw.rectangle((0,round(54*ch/105),round(30*cw/263),ch),fill=(0,0,0,0))
+   draw.rectangle((round(237*cw/263),round(54*ch/105),cw,ch),fill=(0,0,0,0))
   return out.crop(out.getchannel('A').point(lambda x:255 if x>20 else 0).getbbox())
  mark=extract((65,102,291,192),True)
  word=extract((46,196,309,301))
@@ -40,12 +45,13 @@ dark=crop_lockup(media/'logo-horizontal-light.png',True)
 p=root/'index.html';s=p.read_text()
 s=s.replace('id="logo" src="media/logo-transparent.png" alt="Verdleaf Global" width="76" height="76"','id="logo" src="media/logo-horizontal.png" alt="Verdleaf Global" width="%s" height="%s"'%light.size)
 s=s.replace('class="menu-toggle">Menu</button>','class="menu-toggle" aria-label="Open navigation"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path class="menu-line-top" d="M4 6h16"/><path class="menu-line-mid" d="M4 12h16"/><path class="menu-line-bottom" d="M4 18h16"/></svg></button>')
-s=s.replace('</head>','<link rel="stylesheet" href="header-v7.css?v=1"></head>').replace('site.js?v=11','site.js?v=12').replace('media-manifest.js?v=7','media-manifest.js?v=8')
+s=s.replace('header-v7.css?v=1','header-v7.css?v=2');s=s.replace('</head>','<link rel="stylesheet" href="header-v7.css?v=2"></head>') if 'header-v7.css' not in s else s
+s=s.replace('site.js?v=11','site.js?v=12').replace('media-manifest.js?v=7','media-manifest.js?v=8')
 p.write_text(s)
 p=root/'site.js';s=p.read_text()
 s=s.replace("navLogo.src=media.logoTransparent||media.logo","navLogo.src=media.logoHorizontal||media.logoTransparent||media.logo")
 s=s.replace("$('menuToggle').textContent=t('Menu','القائمة');","updateMenuLabel();")
-s=s.replace("function translate(){","function updateMenuLabel(){const open=$('menuToggle').getAttribute('aria-expanded')==='true';$('menuToggle').setAttribute('aria-label',open?t('Close navigation','إغلاق القائمة'):t('Open navigation','فتح القائمة'))}function translate(){")
+if 'function updateMenuLabel()' not in s:s=s.replace("function translate(){","function updateMenuLabel(){const open=$('menuToggle').getAttribute('aria-expanded')==='true';$('menuToggle').setAttribute('aria-label',open?t('Close navigation','إغلاق القائمة'):t('Open navigation','فتح القائمة'))}function translate(){")
 s=s.replace("$('menuToggle').setAttribute('aria-expanded','false')}","$('menuToggle').setAttribute('aria-expanded','false');updateMenuLabel()}")
 s=s.replace("$('menuToggle').onclick=()=>{$('menuToggle').setAttribute('aria-expanded',String($('navLinks').classList.toggle('open')))};","$('menuToggle').onclick=()=>{$('menuToggle').setAttribute('aria-expanded',String($('navLinks').classList.toggle('open')));updateMenuLabel()};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('navLinks').classList.contains('open')){$('navLinks').classList.remove('open');$('menuToggle').setAttribute('aria-expanded','false');updateMenuLabel();$('menuToggle').focus()}});")
 p.write_text(s)
@@ -54,7 +60,7 @@ p=root/'media-manifest.js';m=json.loads(p.read_text().strip().removeprefix('wind
 for p in list((root/'products').glob('*/index.html'))+list((root/'ar/products').glob('*/index.html')):
  s=p.read_text().replace('media/logo-transparent.png','media/logo-horizontal.png')
  prefix='../../../' if p.parts[1]=='ar' else '../../'
- s=s.replace('</head>',f'<link rel="stylesheet" href="{prefix}header-v7.css?v=1"></head>')
+ if 'header-v7.css' not in s:s=s.replace('</head>',f'<link rel="stylesheet" href="{prefix}header-v7.css?v=2"></head>')
  p.write_text(s)
 # Admin uses the matching horizontal white brand asset, with label retained for product context.
 p=root/'admin-demo.html';s=p.read_text().replace('media/logo-light.png','media/logo-horizontal-light.png').replace('Modules ☰</button>','<svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>').replace('id="menu" aria-expanded','id="menu" aria-label="Toggle administration navigation" aria-expanded').replace('admin-demo.css?v=7','admin-demo.css?v=8');p.write_text(s)
