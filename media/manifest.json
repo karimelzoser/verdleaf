@@ -307,8 +307,28 @@
       "kind": "website",
       "width": 600,
       "height": 400
-    }
+    },
+    "slides": [
+      {
+        "path": "media/hero-slide-1.webp",
+        "source": "https://verdleaf.com/wp-content/uploads/2024/02/Untitled-6.jpg",
+        "credit": "Existing Verdleaf website",
+        "kind": "website",
+        "width": 1200,
+        "height": 800
+      },
+      {
+        "path": "media/hero-slide-2.webp",
+        "source": "https://verdleaf.com/wp-content/uploads/2024/02/Untitled-5.jpg",
+        "credit": "Existing Verdleaf website",
+        "kind": "website",
+        "width": 1200,
+        "height": 800
+      }
+    ]
   },
   "source": "https://verdleaf.com",
-  "logo": "media/logo.webp"
+  "logo": "media/logo.webp",
+  "logoTransparent": "media/logo-transparent.png",
+  "logoLight": "media/logo-light.png"
 }
