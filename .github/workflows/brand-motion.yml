@@ -1,0 +1,39 @@
+name: Brand assets and motion validation
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/brand-motion.yml','scripts/brand-assets.py','scripts/verify-brand.mjs']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: preview
+      - run: pip install requests beautifulsoup4 pillow
+      - run: python scripts/brand-assets.py
+      - name: Commit transparent logo and original photo slides
+        working-directory: preview
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add media media-manifest.js
+          git diff --cached --quiet || git commit -m "Preserve original logo with transparent background and import original hero photos"
+          git push origin HEAD:gh-pages
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+      - run: node --check preview/site.js && node --check preview/motion.js
+      - run: node scripts/verify-brand.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verdleaf-brand-motion-evidence
+          path: visual-evidence/
