@@ -60,6 +60,12 @@ Route::prefix('admin')->middleware(['auth',\App\Http\Middleware\StaffSession::cl
  Route::post('/enquiries/{enquiry}',[\App\Http\Controllers\GeneralEnquiries::class,'status'])->name('admin.enquiry.status');
  Route::get('/',[\App\Http\Controllers\Dashboard::class,'index'])->name('admin');
  Route::get('/security',[\App\Http\Controllers\Dashboard::class,'security'])->name('admin.security');
+ Route::get('/commercial',[\App\Http\Controllers\CommercialWorkflow::class,'index'])->name('admin.commercial');
+ Route::post('/commercial',[\App\Http\Controllers\CommercialWorkflow::class,'store'])->name('admin.commercial.store');
+ Route::get('/commercial/{case}',[\App\Http\Controllers\CommercialWorkflow::class,'edit'])->name('admin.commercial.edit');
+ Route::post('/commercial/{case}/price',[\App\Http\Controllers\CommercialWorkflow::class,'price'])->name('admin.commercial.price');
+ Route::post('/commercial/{case}/status',[\App\Http\Controllers\CommercialWorkflow::class,'transition'])->name('admin.commercial.transition');
+ Route::get('/commercial/{case}/print',[\App\Http\Controllers\CommercialWorkflow::class,'print'])->name('admin.commercial.print');
  Route::get('/operations',[Admin::class,'index'])->name('admin.operations');
  Route::post('/products',[Admin::class,'createProduct'])->name('admin.product.create');
  Route::get('/products/{product}',[Admin::class,'edit'])->name('admin.product');
