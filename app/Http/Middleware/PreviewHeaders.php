@@ -4,6 +4,7 @@ use Closure;
 use Illuminate\Http\Request;
 class PreviewHeaders {
     public function handle(Request $request, Closure $next) {
+        if(app()->environment('production')&&$request->is('admin*','staff*','login*','logout')&&!$request->isSecure())return response('HTTPS required for staff access',403,['Cache-Control'=>'private, no-store']);
         if(config('verdleaf.preview')&&app()->environment('production')){
             $key=(string)config('verdleaf.preview_key');$user=(string)config('verdleaf.preview_user');
             if(strlen($key)<24||!hash_equals($user,(string)$request->getUser())||!hash_equals($key,(string)$request->getPassword()))return response('Protected staging',401,['WWW-Authenticate'=>'Basic realm="Verdleaf staging"','X-Robots-Tag'=>'noindex, nofollow','Cache-Control'=>'private, no-store']);

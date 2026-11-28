@@ -1,0 +1,22 @@
+import {test,expect} from '@playwright/test';
+import {execFileSync} from 'node:child_process';
+import fs from 'node:fs';
+test('staff MFA and dashboard on an isolated synthetic database',async({page},testInfo)=>{
+ const email='browser-'+testInfo.project.name+'@example.test';
+ const output=execFileSync('php',['tests/browser/provision-test-admin.php',email],{encoding:'utf8'}).trim();
+ const secretCode=output.split('\n').at(-1);
+ await page.goto('/admin');await expect(page).toHaveURL(/\/login$/);
+ await page.getByLabel('Email',{exact:true}).fill(email);
+ await page.getByLabel('Password',{exact:true}).fill('browser-test-only-password');
+ await page.getByRole('button',{name:'Continue'}).click();
+ await expect(page).toHaveURL(/\/login\/verify$/);
+ await page.getByLabel('Verification code').fill(secretCode);
+ await page.getByRole('button',{name:'Verify & sign in'}).click();
+ await expect(page.getByRole('heading',{name:'Operations overview'})).toBeVisible();
+ fs.mkdirSync('visual-evidence',{recursive:true});
+ await page.screenshot({path:'visual-evidence/'+testInfo.project.name+'-admin-dashboard.png',fullPage:true,animations:'disabled'});
+ await page.getByRole('link',{name:'Security & access'}).click();
+ await expect(page.getByRole('heading',{name:'Security & access'})).toBeVisible();
+ await page.screenshot({path:'visual-evidence/'+testInfo.project.name+'-admin-security.png',fullPage:true,animations:'disabled'});
+ await page.getByRole('button',{name:'Sign out'}).click();await page.goto('/admin');await expect(page).toHaveURL(/\/login$/);
+});

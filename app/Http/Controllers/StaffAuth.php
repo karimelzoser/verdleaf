@@ -11,7 +11,8 @@ class StaffAuth {
   $d=$r->validate(['email'=>'required|email|max:255','password'=>'required|string|max:128']);$key=$this->key($r,$d['email']);
   if(RateLimiter::tooManyAttempts($key,5))return back()->withErrors(['email'=>'Unable to sign in. Try again later.']);
   $u=User::where('email',mb_strtolower($d['email']))->first();
-  if(!$u||$u->disabled_at||!Hash::check($d['password'],$u->password)){RateLimiter::hit($key,600);StaffSecurity::event($u?->id,'password_rejected');return back()->withErrors(['email'=>'Invalid credentials.']);}
+  $valid=Hash::check($d['password'],$u?->password??'$2y$12$7dC/1oqu1L7LpJAGjRdfOe8j0.QH67rJZiNqJQ7JvO5Hdb0x5oGGW');
+  if(!$u||$u->disabled_at||!$valid){RateLimiter::hit($key,600);StaffSecurity::event($u?->id,'password_rejected');return back()->withErrors(['email'=>'Invalid credentials.']);}
   RateLimiter::clear($key);$r->session()->invalidate();$r->session()->regenerateToken();
   if(StaffSecurity::required()){
    if(!$u->totp_secret){StaffSecurity::event($u->id,'enrollment_required');return redirect()->route('login')->withErrors(['email'=>'Staff access requires administrator-enrolled multi-factor authentication.']);}
