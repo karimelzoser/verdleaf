@@ -1,0 +1,28 @@
+name: V8 logo and homepage scroll validation
+on:
+  push:
+    branches: [main]
+    paths: ['scripts/v8-brand-check.mjs','.github/workflows/v8-brand-check.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: preview
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-save playwright@1.56.1
+      - run: npx playwright install --with-deps chromium
+      - run: node --check preview/site.js && node scripts/v8-brand-check.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v8-brand-evidence
+          path: visual-evidence/
