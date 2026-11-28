@@ -1,0 +1,833 @@
+{
+  "previewBase": "https://karimelzoser.github.io/verdleaf/",
+  "indexing": "disabled",
+  "productionBase": "https://verdleaf.com/",
+  "pages": [
+    {
+      "path": "",
+      "locale": "en",
+      "title": "Verdleaf Global | Egyptian Botanical Ingredients & Bulk Sourcing",
+      "description": "Explore Verdleaf Global’s catalogue of Egyptian herbs, spices, seeds and botanical ingredients. Discuss bulk sourcing, samples and technical requirements.",
+      "group": "home"
+    },
+    {
+      "path": "about/",
+      "locale": "en",
+      "title": "About Verdleaf Global | Verdleaf Global",
+      "description": "Verdleaf Global presents a catalogue of botanical ingredients and sourcing services from Fayoum, Egypt.",
+      "group": "guide"
+    },
+    {
+      "path": "applications/",
+      "locale": "en",
+      "title": "Ingredients by application | Verdleaf",
+      "description": "Browse botanical ingredients by food, tea and beverage applications.",
+      "group": "application"
+    },
+    {
+      "path": "applications/beverages/",
+      "locale": "en",
+      "title": "Beverages | Botanical Ingredients | Verdleaf",
+      "description": "Explore botanical ingredients listed for beverages. Discuss application suitability, grade and specifications with the export team.",
+      "group": "application"
+    },
+    {
+      "path": "applications/food-manufacturing/",
+      "locale": "en",
+      "title": "Food manufacturing | Botanical Ingredients | Verdleaf",
+      "description": "Explore botanical ingredients listed for food manufacturing. Discuss application suitability, grade and specifications with the export team.",
+      "group": "application"
+    },
+    {
+      "path": "applications/herbal-tea/",
+      "locale": "en",
+      "title": "Tea & infusions | Botanical Ingredients | Verdleaf",
+      "description": "Explore botanical ingredients listed for tea & infusions. Discuss application suitability, grade and specifications with the export team.",
+      "group": "application"
+    },
+    {
+      "path": "ar/",
+      "locale": "ar",
+      "title": "فيردليف جلوبال | المكونات النباتية المصرية",
+      "description": "استكشف الأعشاب والتوابل والبذور والمكونات النباتية وخدمات التوريد لدى فيردليف جلوبال في الفيوم، مصر.",
+      "group": "home"
+    },
+    {
+      "path": "ar/about/",
+      "locale": "ar",
+      "title": "عن فيردليف جلوبال | Verdleaf Global",
+      "description": "تعرض فيردليف جلوبال كتالوج المكونات النباتية وخدمات التوريد من الفيوم في مصر.",
+      "group": "guide"
+    },
+    {
+      "path": "ar/applications/",
+      "locale": "ar",
+      "title": "المكونات حسب الاستخدام | Verdleaf",
+      "description": "تصفح المكونات حسب الاستخدام في الأغذية والشاي والمشروبات.",
+      "group": "application"
+    },
+    {
+      "path": "ar/applications/beverages/",
+      "locale": "ar",
+      "title": "المشروبات | المكونات النباتية | فيردليف",
+      "description": "استكشف المكونات النباتية المدرجة للاستخدام في المشروبات. ناقش الدرجة والمواصفات والملاءمة مع فريق التصدير.",
+      "group": "application"
+    },
+    {
+      "path": "ar/applications/food-manufacturing/",
+      "locale": "ar",
+      "title": "تصنيع الأغذية | المكونات النباتية | فيردليف",
+      "description": "استكشف المكونات النباتية المدرجة للاستخدام في تصنيع الأغذية. ناقش الدرجة والمواصفات والملاءمة مع فريق التصدير.",
+      "group": "application"
+    },
+    {
+      "path": "ar/applications/herbal-tea/",
+      "locale": "ar",
+      "title": "الشاي والمشروبات العشبية | المكونات النباتية | فيردليف",
+      "description": "استكشف المكونات النباتية المدرجة للاستخدام في الشاي والمشروبات العشبية. ناقش الدرجة والمواصفات والملاءمة مع فريق التصدير.",
+      "group": "application"
+    },
+    {
+      "path": "ar/crop-calendar/",
+      "locale": "ar",
+      "title": "التخطيط للمواسم الزراعية للمكونات النباتية | Verdleaf Global",
+      "description": "خطط لاستفسارات التوريد وفق الموسم ومواعيد الحصاد والتوافر المؤكد في المنطقة.",
+      "group": "guide"
+    },
+    {
+      "path": "ar/products/",
+      "locale": "ar",
+      "title": "كتالوج الأعشاب والتوابل والمكونات النباتية | فيردليف",
+      "description": "تصفح 44 مكوناً نباتياً في كتالوج فيردليف، وقارن الأعشاب والبذور والتوابل والمنتجات المجففة وأرسل استفسار توريد.",
+      "group": "catalogue"
+    },
+    {
+      "path": "ar/products/anise/",
+      "locale": "ar",
+      "title": "يانسون | توريد المكونات النباتية | فيردليف",
+      "description": "مكوّن عطري لمشروبات الأعشاب وخلطات نكهات المخبوزات. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/basil/",
+      "locale": "ar",
+      "title": "ريحان | توريد المكونات النباتية | فيردليف",
+      "description": "أوراق عطرية تُستخدم في خلطات التوابل والصلصات. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/bay-leaves/",
+      "locale": "ar",
+      "title": "ورق لورا | توريد المكونات النباتية | فيردليف",
+      "description": "أوراق عطرية للأغذية وخلطات التوابل. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/black-seeds-nigella/",
+      "locale": "ar",
+      "title": "حبة البركة | توريد المكونات النباتية | فيردليف",
+      "description": "بذور تُستخدم في التوابل والمخبوزات؛ يتم تأكيد درجة المنتج ومتطلبات التنظيف. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/calendula/",
+      "locale": "ar",
+      "title": "أقحوان طبي | توريد المكونات النباتية | فيردليف",
+      "description": "زهور نباتية لتطبيقات مختارة في مشروبات الأعشاب والمكونات النباتية. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/caraway/",
+      "locale": "ar",
+      "title": "كراوية | توريد المكونات النباتية | فيردليف",
+      "description": "بذور عطرية للتوابل والمخبوزات ومشروبات الأعشاب. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/category/flowers/",
+      "locale": "ar",
+      "title": "الزهور والنباتات | كتالوج فيردليف",
+      "description": "تصفح الزهور والنباتات، والأشكال المتاحة للاستفسار، ومتطلبات التوريد والمواصفات لدى فيردليف.",
+      "group": "category"
+    },
+    {
+      "path": "ar/products/category/herbs/",
+      "locale": "ar",
+      "title": "الأعشاب والأوراق | كتالوج فيردليف",
+      "description": "تصفح الأعشاب والأوراق، والأشكال المتاحة للاستفسار، ومتطلبات التوريد والمواصفات لدى فيردليف.",
+      "group": "category"
+    },
+    {
+      "path": "ar/products/category/produce/",
+      "locale": "ar",
+      "title": "المنتجات المجففة | كتالوج فيردليف",
+      "description": "تصفح المنتجات المجففة، والأشكال المتاحة للاستفسار، ومتطلبات التوريد والمواصفات لدى فيردليف.",
+      "group": "category"
+    },
+    {
+      "path": "ar/products/category/roots/",
+      "locale": "ar",
+      "title": "الجذور والراتنجات | كتالوج فيردليف",
+      "description": "تصفح الجذور والراتنجات، والأشكال المتاحة للاستفسار، ومتطلبات التوريد والمواصفات لدى فيردليف.",
+      "group": "category"
+    },
+    {
+      "path": "ar/products/category/seeds/",
+      "locale": "ar",
+      "title": "البذور والتوابل | كتالوج فيردليف",
+      "description": "تصفح البذور والتوابل، والأشكال المتاحة للاستفسار، ومتطلبات التوريد والمواصفات لدى فيردليف.",
+      "group": "category"
+    },
+    {
+      "path": "ar/products/celery/",
+      "locale": "ar",
+      "title": "كرفس | توريد المكونات النباتية | فيردليف",
+      "description": "مكوّن عطري للأغذية؛ يُحدد الجزء النباتي وطريقة التجهيز حسب الطلب. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/chamomile/",
+      "locale": "ar",
+      "title": "بابونج | توريد المكونات النباتية | فيردليف",
+      "description": "زهور نباتية لمشروبات الأعشاب. يُحدد المشتري الشكل والحجم المطلوبين. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/coriander-leaves/",
+      "locale": "ar",
+      "title": "أوراق الكزبرة | توريد المكونات النباتية | فيردليف",
+      "description": "أوراق عطرية للأغذية وخلطات التوابل. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/coriander/",
+      "locale": "ar",
+      "title": "كزبرة | توريد المكونات النباتية | فيردليف",
+      "description": "مكوّن للتوابل والأغذية؛ يُحدد المشتري البذور أو الأوراق عند طلب المواصفات. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/cumin/",
+      "locale": "ar",
+      "title": "كمون | توريد المكونات النباتية | فيردليف",
+      "description": "توابل عطرية لتصنيع الأغذية وخلطات التوابل. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/dill/",
+      "locale": "ar",
+      "title": "شبت | توريد المكونات النباتية | فيردليف",
+      "description": "عشب عطري لخلطات التوابل والمخللات. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/dried-beetroot/",
+      "locale": "ar",
+      "title": "بنجر مجفف | توريد المكونات النباتية | فيردليف",
+      "description": "مكوّن خضري مجفف؛ يُحدد الشكل والحجم المطلوبان. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/dried-garlic/",
+      "locale": "ar",
+      "title": "ثوم مجفف | توريد المكونات النباتية | فيردليف",
+      "description": "مكوّن مجفف للتوابل والأغذية؛ استفسر عن طريقة التجهيز والحجم. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/dried-lemon/",
+      "locale": "ar",
+      "title": "ليمون مجفف | توريد المكونات النباتية | فيردليف",
+      "description": "مكوّن حمضي مجفف لخلطات النكهات؛ يتم تأكيد طريقة التجفيف والشكل المطلوب. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/dried-onion/",
+      "locale": "ar",
+      "title": "بصل مجفف | توريد المكونات النباتية | فيردليف",
+      "description": "مكوّن خضري مجفف للتوابل وتصنيع الأغذية. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/echinacea/",
+      "locale": "ar",
+      "title": "إشنسا | توريد المكونات النباتية | فيردليف",
+      "description": "مكوّن نباتي؛ يُرجى تأكيد النوع والجزء النباتي والاستخدام. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/fennel-leaves/",
+      "locale": "ar",
+      "title": "أوراق الشمر | توريد المكونات النباتية | فيردليف",
+      "description": "أوراق عطرية للاستخدامات الغذائية. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/fennel/",
+      "locale": "ar",
+      "title": "شمر | توريد المكونات النباتية | فيردليف",
+      "description": "مكوّن عطري بنكهة قريبة من اليانسون؛ يتم تحديد الجزء والشكل المطلوبين. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/fenugreek-leaves/",
+      "locale": "ar",
+      "title": "أوراق الحلبة | توريد المكونات النباتية | فيردليف",
+      "description": "أوراق نباتية لخلطات التوابل. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/fenugreek/",
+      "locale": "ar",
+      "title": "حلبة | توريد المكونات النباتية | فيردليف",
+      "description": "مكوّن معروف في خلطات التوابل؛ يتم تأكيد الشكل التجاري المتاح. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/frankincense/",
+      "locale": "ar",
+      "title": "لبان ذكر | توريد المكونات النباتية | فيردليف",
+      "description": "راتنج طبيعي؛ يتطلب التوريد تأكيد النوع النباتي والدرجة والغرض من الاستخدام. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/ginger/",
+      "locale": "ar",
+      "title": "زنجبيل | توريد المكونات النباتية | فيردليف",
+      "description": "جذمور عطري لتصنيع الأغذية والمشروبات. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/hibiscus/",
+      "locale": "ar",
+      "title": "كركديه | توريد المكونات النباتية | فيردليف",
+      "description": "مكوّن نباتي ذو نكهة حمضية لمشروبات الأعشاب وتصنيع المشروبات. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/lemon-balm/",
+      "locale": "ar",
+      "title": "مليسة | توريد المكونات النباتية | فيردليف",
+      "description": "نبات عطري برائحة الليمون للمشروبات العشبية. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/lemongrass/",
+      "locale": "ar",
+      "title": "حشيشة الليمون | توريد المكونات النباتية | فيردليف",
+      "description": "نبات عطري بنكهة الليمون لمشروبات الأعشاب وخلطات النكهات. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/liquorice/",
+      "locale": "ar",
+      "title": "عرق سوس | توريد المكونات النباتية | فيردليف",
+      "description": "جذر نباتي لخلطات النكهات والمشروبات؛ يتم تأكيد الهوية والمتطلبات. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/marjoram/",
+      "locale": "ar",
+      "title": "بردقوش | توريد المكونات النباتية | فيردليف",
+      "description": "أوراق عطرية لخلطات التوابل ومشروبات الأعشاب. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/molokhia/",
+      "locale": "ar",
+      "title": "ملوخية | توريد المكونات النباتية | فيردليف",
+      "description": "أوراق نباتية معروفة في المطبخ المصري. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/moringa/",
+      "locale": "ar",
+      "title": "مورينجا | توريد المكونات النباتية | فيردليف",
+      "description": "مكوّن نباتي؛ يتم تأكيد الجزء المستخدم والشكل والغرض من التوريد. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/oregano/",
+      "locale": "ar",
+      "title": "أوريجانو | توريد المكونات النباتية | فيردليف",
+      "description": "أوراق عطرية لخلطات التوابل والأغذية. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/parsley/",
+      "locale": "ar",
+      "title": "بقدونس | توريد المكونات النباتية | فيردليف",
+      "description": "أوراق عطرية لخلطات التوابل وتصنيع الأغذية. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/peppermint/",
+      "locale": "ar",
+      "title": "نعناع فلفلي | توريد المكونات النباتية | فيردليف",
+      "description": "نوع من النعناع ذو نكهة عطرية منعشة للمشروبات وخلطات النكهات. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/pumpkin-seeds/",
+      "locale": "ar",
+      "title": "بذور اليقطين | توريد المكونات النباتية | فيردليف",
+      "description": "بذور لتصنيع الأغذية؛ يُؤكد الشكل والدرجة. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/rosemary/",
+      "locale": "ar",
+      "title": "إكليل الجبل | توريد المكونات النباتية | فيردليف",
+      "description": "نبات عطري لخلطات التوابل وتطبيقات المكونات النباتية. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/sage/",
+      "locale": "ar",
+      "title": "مريمية | توريد المكونات النباتية | فيردليف",
+      "description": "أوراق عطرية مميزة لخلطات التوابل ومشروبات الأعشاب. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/savory/",
+      "locale": "ar",
+      "title": "ندغ | توريد المكونات النباتية | فيردليف",
+      "description": "عشب عطري للتوابل؛ يُحدد النوع والدرجة عند الطلب. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/sesame/",
+      "locale": "ar",
+      "title": "سمسم | توريد المكونات النباتية | فيردليف",
+      "description": "بذور للمخبوزات وتصنيع الأغذية؛ يتم تأكيد طريقة التجهيز والدرجة. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/spearmint/",
+      "locale": "ar",
+      "title": "نعناع بلدي | توريد المكونات النباتية | فيردليف",
+      "description": "نعناع للمشروبات وخلطات النكهات؛ يتم تأكيد النوع والدرجة حسب الطلب. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/stevia/",
+      "locale": "ar",
+      "title": "ستيفيا | توريد المكونات النباتية | فيردليف",
+      "description": "أوراق نباتية مرتبطة باستخدامات التحلية؛ تُؤكد الدرجة والاستخدام. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/sunflower/",
+      "locale": "ar",
+      "title": "بذور عباد الشمس | توريد المكونات النباتية | فيردليف",
+      "description": "بذور للمخبوزات والأغذية؛ تُحدد متطلبات التنظيف والتجهيز. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/tarragon/",
+      "locale": "ar",
+      "title": "طرخون | توريد المكونات النباتية | فيردليف",
+      "description": "مكوّن عطري للصلصات والتوابل. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/thyme/",
+      "locale": "ar",
+      "title": "زعتر | توريد المكونات النباتية | فيردليف",
+      "description": "مكوّن عطري للتوابل؛ يُؤكد النوع النباتي والجزء المستخدم قبل التوريد. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/products/watermelon-seeds/",
+      "locale": "ar",
+      "title": "بذور البطيخ | توريد المكونات النباتية | فيردليف",
+      "description": "بذور مدرجة في كتالوج فيردليف؛ تُؤكد متطلبات التجهيز والتوريد. استفسر عن الأشكال التجارية والمواصفات والتعبئة لدى فيردليف.",
+      "group": "product"
+    },
+    {
+      "path": "ar/quality/",
+      "locale": "ar",
+      "title": "مستندات جودة المكونات النباتية | Verdleaf Global",
+      "description": "تعرف على المستندات الفنية التي ينبغي طلبها قبل اعتماد مكون نباتي للاستخدام التجاري.",
+      "group": "guide"
+    },
+    {
+      "path": "ar/sourcing/",
+      "locale": "ar",
+      "title": "دليل توريد المكونات النباتية بالجملة | Verdleaf Global",
+      "description": "أعد استفساراً عن عرض سعر أو عينة بتحديد هوية المنتج والشكل والكمية والوجهة والمتطلبات الفنية.",
+      "group": "guide"
+    },
+    {
+      "path": "crop-calendar/",
+      "locale": "en",
+      "title": "Egyptian botanical crop planning | Verdleaf Global",
+      "description": "Plan ingredient enquiries around confirmed crop years, harvest windows and regional availability.",
+      "group": "guide"
+    },
+    {
+      "path": "products/",
+      "locale": "en",
+      "title": "Botanical Ingredients Catalogue – Herbs, Spices & Seeds | Verdleaf",
+      "description": "Explore 44 botanical ingredients in Verdleaf’s catalogue, from herbs and spices to seeds, flowers and dehydrated produce. Find a profile and prepare a bulk enquiry.",
+      "group": "catalogue"
+    },
+    {
+      "path": "products/anise/",
+      "locale": "en",
+      "title": "Anise – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "An aromatic ingredient for infusions and bakery flavor blends. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/basil/",
+      "locale": "en",
+      "title": "Basil – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "Aromatic leaves used in seasoning blends, sauces and savory formulations. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/bay-leaves/",
+      "locale": "en",
+      "title": "Bay leaves – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "Aromatic leaves for savory foods and spice blends. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/black-seeds-nigella/",
+      "locale": "en",
+      "title": "Black seeds (Nigella) – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A seed ingredient used in seasoning and bakery formulations; confirm grade and cleaning requirements. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/calendula/",
+      "locale": "en",
+      "title": "Calendula – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A botanical flower ingredient for selected infusion and ingredient applications. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/caraway/",
+      "locale": "en",
+      "title": "Caraway – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "An aromatic seed ingredient for seasoning, baking and infusion blends. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/category/flowers/",
+      "locale": "en",
+      "title": "Flowers & botanicals | Bulk Ingredient Catalogue | Verdleaf",
+      "description": "Browse flowers & botanicals in Verdleaf’s botanical catalogue. Review individual ingredient profiles, enquiry forms and sourcing requirements.",
+      "group": "category"
+    },
+    {
+      "path": "products/category/herbs/",
+      "locale": "en",
+      "title": "Herbs & leaves | Bulk Ingredient Catalogue | Verdleaf",
+      "description": "Browse herbs & leaves in Verdleaf’s botanical catalogue. Review individual ingredient profiles, enquiry forms and sourcing requirements.",
+      "group": "category"
+    },
+    {
+      "path": "products/category/produce/",
+      "locale": "en",
+      "title": "Dehydrated produce | Bulk Ingredient Catalogue | Verdleaf",
+      "description": "Browse dehydrated produce in Verdleaf’s botanical catalogue. Review individual ingredient profiles, enquiry forms and sourcing requirements.",
+      "group": "category"
+    },
+    {
+      "path": "products/category/roots/",
+      "locale": "en",
+      "title": "Roots & resins | Bulk Ingredient Catalogue | Verdleaf",
+      "description": "Browse roots & resins in Verdleaf’s botanical catalogue. Review individual ingredient profiles, enquiry forms and sourcing requirements.",
+      "group": "category"
+    },
+    {
+      "path": "products/category/seeds/",
+      "locale": "en",
+      "title": "Seeds & spices | Bulk Ingredient Catalogue | Verdleaf",
+      "description": "Browse seeds & spices in Verdleaf’s botanical catalogue. Review individual ingredient profiles, enquiry forms and sourcing requirements.",
+      "group": "category"
+    },
+    {
+      "path": "products/celery/",
+      "locale": "en",
+      "title": "Celery – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "An aromatic ingredient for savory formulations; confirm the plant part and preparation required. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/chamomile/",
+      "locale": "en",
+      "title": "Chamomile – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A botanical flower ingredient for infusion blends. Buyers should specify the desired form and cut size. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/coriander-leaves/",
+      "locale": "en",
+      "title": "Coriander leaves – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A leafy aromatic ingredient for savory food formulations. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/coriander/",
+      "locale": "en",
+      "title": "Coriander – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A versatile ingredient for savory formulations; confirm seeds or leaves when requesting specifications. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/cumin/",
+      "locale": "en",
+      "title": "Cumin – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A warm aromatic spice for food manufacturing and blended seasonings. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/dill/",
+      "locale": "en",
+      "title": "Dill – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A delicate aromatic herb for seasoning and pickled food formulations. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/dried-beetroot/",
+      "locale": "en",
+      "title": "Dried beetroot – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A dehydrated vegetable ingredient. Specify the preferred form and particle size. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/dried-garlic/",
+      "locale": "en",
+      "title": "Dried garlic – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A dehydrated seasoning ingredient for savory foods; ask about preparation and cut size. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/dried-lemon/",
+      "locale": "en",
+      "title": "Dried lemon – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A dried citrus ingredient for flavor blends. Confirm drying method and required form. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/dried-onion/",
+      "locale": "en",
+      "title": "Dried onion – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A dehydrated vegetable ingredient for seasoning and prepared food formulations. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/echinacea/",
+      "locale": "en",
+      "title": "Echinacea – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A botanical ingredient. Confirm species, plant part and intended use with the export team. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/fennel-leaves/",
+      "locale": "en",
+      "title": "Fennel leaves – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A distinct plant part for aromatic culinary formulations. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/fennel/",
+      "locale": "en",
+      "title": "Fennel – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "An anise-like aromatic ingredient for flavor blends; confirm the plant part and form. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/fenugreek-leaves/",
+      "locale": "en",
+      "title": "Fenugreek leaves – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A leafy ingredient for savory seasoning blends. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/fenugreek/",
+      "locale": "en",
+      "title": "Fenugreek – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "An ingredient associated with seed-based seasoning blends; confirm commercial form. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/frankincense/",
+      "locale": "en",
+      "title": "Frankincense – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A natural resin ingredient; source species, grade and intended application require confirmation. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/ginger/",
+      "locale": "en",
+      "title": "Ginger – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "An aromatic rhizome for food and beverage formulations. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/hibiscus/",
+      "locale": "en",
+      "title": "Hibiscus – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A tart botanical ingredient for herbal infusions and beverage formulations. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/lemon-balm/",
+      "locale": "en",
+      "title": "Lemon balm – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A lemon-scented botanical for infusion blends. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/lemongrass/",
+      "locale": "en",
+      "title": "Lemongrass – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A citrus-scented botanical for herbal infusions and flavor blends. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/liquorice/",
+      "locale": "en",
+      "title": "Liquorice – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A botanical root ingredient for flavor and infusion applications; confirm identity and requirements. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/marjoram/",
+      "locale": "en",
+      "title": "Marjoram – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "An aromatic leaf ingredient for savory blends and herbal infusions. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/molokhia/",
+      "locale": "en",
+      "title": "Molokhia – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A leafy ingredient associated with Egyptian culinary traditions. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/moringa/",
+      "locale": "en",
+      "title": "Moringa – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A botanical ingredient; confirm plant part, form and intended use. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/oregano/",
+      "locale": "en",
+      "title": "Oregano – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "Aromatic leaves for Mediterranean-style food and seasoning formulations. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/parsley/",
+      "locale": "en",
+      "title": "Parsley – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A leafy seasoning ingredient for food manufacturing and savory blends. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/peppermint/",
+      "locale": "en",
+      "title": "Peppermint – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A mint ingredient with a cooling aromatic profile for infusion and flavor applications. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/pumpkin-seeds/",
+      "locale": "en",
+      "title": "Pumpkin seeds – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "Seeds for food manufacturing; confirm form and grade. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/rosemary/",
+      "locale": "en",
+      "title": "Rosemary – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "An aromatic botanical for seasoning and other ingredient applications. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/sage/",
+      "locale": "en",
+      "title": "Sage – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A distinctive aromatic leaf for savory blends and infusions. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/savory/",
+      "locale": "en",
+      "title": "Savory – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "An aromatic seasoning herb; confirm the specific species and grade. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/sesame/",
+      "locale": "en",
+      "title": "Sesame – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A seed ingredient for bakery and food formulations; confirm processing and grade. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/spearmint/",
+      "locale": "en",
+      "title": "Spearmint – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A mint ingredient for infusions and flavor applications; confirm species and grade. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/stevia/",
+      "locale": "en",
+      "title": "Stevia – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "Botanical leaves associated with sweetening applications. Confirm grade and intended use. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/sunflower/",
+      "locale": "en",
+      "title": "Sunflower seeds – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "A seed ingredient for bakery and food applications. Specify cleaning and processing requirements. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/tarragon/",
+      "locale": "en",
+      "title": "Tarragon – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "An aromatic ingredient for sauces and seasoning formulations. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/thyme/",
+      "locale": "en",
+      "title": "Thyme – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "An aromatic seasoning ingredient; botanical species and plant part need confirmation. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "products/watermelon-seeds/",
+      "locale": "en",
+      "title": "Watermelon seeds – Bulk Ingredient Enquiries | Verdleaf Global",
+      "description": "Seeds listed in Verdleaf's catalogue; confirm processing and commercial requirements. Discuss bulk sourcing, form, specifications and packing with Verdleaf.",
+      "group": "product"
+    },
+    {
+      "path": "quality/",
+      "locale": "en",
+      "title": "Quality documents for botanical ingredients | Verdleaf Global",
+      "description": "Understand which technical documents to request before approving a botanical ingredient for commercial use.",
+      "group": "guide"
+    },
+    {
+      "path": "sourcing/",
+      "locale": "en",
+      "title": "Bulk botanical ingredient sourcing guide | Verdleaf Global",
+      "description": "Prepare a useful quotation or sample enquiry by specifying ingredient identity, form, quantity, destination and technical requirements.",
+      "group": "guide"
+    }
+  ]
+}
