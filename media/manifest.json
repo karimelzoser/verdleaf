@@ -278,37 +278,139 @@
       "kind": "botanical reference",
       "width": 346,
       "height": 274
+    },
+    "oregano": {
+      "path": "media/reference-oregano.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Oregano_dried.JPG",
+      "credit": "Miansari66",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 825,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "echinacea": {
+      "path": "media/reference-echinacea.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Echinacea_purpurea-IMG_9025.jpg",
+      "credit": "C T Johansson",
+      "license": "https://creativecommons.org/licenses/by/3.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 825,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "stevia": {
+      "path": "media/reference-stevia.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Stevia_rebaudiana_leaves_dry.JPG",
+      "credit": "NmiPortal",
+      "license": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 733,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "coriander-leaves": {
+      "path": "media/reference-coriander-leaves.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Coriander_Leaves.jpg",
+      "credit": "Rupeshm364",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 825,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "fennel-leaves": {
+      "path": "media/reference-fennel-leaves.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Foeniculum_vulgare_leaves_chopped.jpg",
+      "credit": "Saintfevrier",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 616,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "fenugreek-leaves": {
+      "path": "media/reference-fenugreek-leaves.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Dried_leaves_of_Fenugreek-Kasuri_Methi.jpg",
+      "credit": "Thamizhpparithi Maari",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 619,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "lemon-balm": {
+      "path": "media/reference-lemon-balm.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Melissae_folium_005179.jpg",
+      "credit": "Rillke",
+      "license": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 825,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
     }
   },
   "photos": {
     "hero": {
-      "path": "media/hero.webp",
-      "source": "https://verdleaf.com/wp-content/uploads/2024/02/Untitled-2.jpg",
-      "credit": "Existing Verdleaf website",
-      "license": "Company site asset; reuse subject to owner approval",
-      "kind": "website",
-      "width": 1200,
-      "height": 800
+      "path": "media/reference-landscape.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Landwirtschaft_im_Fayyum_Becken.jpg",
+      "credit": "Christian-wittmann-1964",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "regional reference",
+      "width": 1900,
+      "height": 1228,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
     },
     "editorial": {
-      "path": "media/moringa-editorial.webp",
-      "source": "https://verdleaf.com/about-us/",
-      "credit": "Existing Verdleaf website",
-      "license": "Company site asset; reuse subject to owner approval",
-      "kind": "website",
-      "width": 600,
-      "height": 400
+      "path": "media/reference-field.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Sun_flower_fields_at_Faiyom,_tounis_village.jpg",
+      "credit": "Shady Elhakim",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "regional reference",
+      "width": 1166,
+      "height": 1500,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
     },
     "story": {
-      "path": "media/chamomile.webp",
-      "source": "https://verdleaf.com/wp-content/uploads/2024/09/Picture7.webp",
-      "credit": "Existing Verdleaf website",
-      "license": "Company site asset; reuse subject to owner approval",
-      "kind": "website",
-      "width": 600,
-      "height": 400
+      "path": "media/reference-harvest.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:%D8%AD%D8%B5%D8%A7%D8%AF_%D8%A7%D9%84%D9%82%D9%85%D8%AD_%D8%A8%D8%A7%D9%84%D9%81%D9%8A%D9%88%D9%85_147.jpg",
+      "credit": "Mohamed shokry algarnosy",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "regional reference",
+      "width": 1900,
+      "height": 1267,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
     },
     "slides": [
+      {
+        "path": "media/reference-field.webp",
+        "source": "https://commons.wikimedia.org/wiki/File:Sun_flower_fields_at_Faiyom,_tounis_village.jpg",
+        "credit": "Shady Elhakim",
+        "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "kind": "regional reference",
+        "width": 1166,
+        "height": 1500,
+        "modified": "Resized and converted to WebP; no compositional manipulation."
+      },
+      {
+        "path": "media/reference-flowers-field.webp",
+        "source": "https://commons.wikimedia.org/wiki/File:Chamomile_field.jpg",
+        "credit": "Dmytro Ivashchenko",
+        "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "kind": "regional reference",
+        "width": 1900,
+        "height": 1425,
+        "modified": "Resized and converted to WebP; no compositional manipulation."
+      },
+      {
+        "path": "media/hero.webp",
+        "source": "https://verdleaf.com/wp-content/uploads/2024/02/Untitled-2.jpg",
+        "credit": "Existing Verdleaf website",
+        "license": "Company site asset; reuse subject to owner approval",
+        "kind": "website",
+        "width": 1200,
+        "height": 800
+      },
       {
         "path": "media/hero-slide-1.webp",
         "source": "https://verdleaf.com/wp-content/uploads/2024/02/Untitled-6.jpg",
@@ -330,5 +432,117 @@
   "source": "https://verdleaf.com",
   "logo": "media/logo.webp",
   "logoTransparent": "media/logo-transparent.png",
-  "logoLight": "media/logo-light.png"
+  "logoLight": "media/logo-light.png",
+  "references": {
+    "landscape": {
+      "path": "media/reference-landscape.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Landwirtschaft_im_Fayyum_Becken.jpg",
+      "credit": "Christian-wittmann-1964",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "regional reference",
+      "width": 1900,
+      "height": 1228,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "field": {
+      "path": "media/reference-field.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Sun_flower_fields_at_Faiyom,_tounis_village.jpg",
+      "credit": "Shady Elhakim",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "regional reference",
+      "width": 1166,
+      "height": 1500,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "harvest": {
+      "path": "media/reference-harvest.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:%D8%AD%D8%B5%D8%A7%D8%AF_%D8%A7%D9%84%D9%82%D9%85%D8%AD_%D8%A8%D8%A7%D9%84%D9%81%D9%8A%D9%88%D9%85_147.jpg",
+      "credit": "Mohamed shokry algarnosy",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "regional reference",
+      "width": 1900,
+      "height": 1267,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "flowers-field": {
+      "path": "media/reference-flowers-field.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Chamomile_field.jpg",
+      "credit": "Dmytro Ivashchenko",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "regional reference",
+      "width": 1900,
+      "height": 1425,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "oregano": {
+      "path": "media/reference-oregano.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Oregano_dried.JPG",
+      "credit": "Miansari66",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 825,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "echinacea": {
+      "path": "media/reference-echinacea.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Echinacea_purpurea-IMG_9025.jpg",
+      "credit": "C T Johansson",
+      "license": "https://creativecommons.org/licenses/by/3.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 825,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "stevia": {
+      "path": "media/reference-stevia.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Stevia_rebaudiana_leaves_dry.JPG",
+      "credit": "NmiPortal",
+      "license": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 733,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "coriander-leaves": {
+      "path": "media/reference-coriander-leaves.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Coriander_Leaves.jpg",
+      "credit": "Rupeshm364",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 825,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "fennel-leaves": {
+      "path": "media/reference-fennel-leaves.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Foeniculum_vulgare_leaves_chopped.jpg",
+      "credit": "Saintfevrier",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 616,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "fenugreek-leaves": {
+      "path": "media/reference-fenugreek-leaves.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Dried_leaves_of_Fenugreek-Kasuri_Methi.jpg",
+      "credit": "Thamizhpparithi Maari",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 619,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "lemon-balm": {
+      "path": "media/reference-lemon-balm.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Melissae_folium_005179.jpg",
+      "credit": "Rillke",
+      "license": "https://creativecommons.org/licenses/by-sa/3.0/de/deed.en",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 825,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    }
+  }
 }
