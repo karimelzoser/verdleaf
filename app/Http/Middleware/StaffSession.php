@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 class StaffSession {
  public function handle(Request $r,Closure $next){
-  $u=$r->user();abort_unless($u,401);
+  $identity=$r->user();abort_unless($identity,401);$u=$identity->fresh();if(!$u)return $this->end($r);Auth::setUser($u);
   if($u->disabled_at||!in_array($u->role,['admin','editor','quality','sales','analytics'],true))return $this->end($r);
   if(StaffSecurity::required()){
    $now=time();$verified=$r->session()->get('staff_verified');$last=$r->session()->get('staff_last');$started=$r->session()->get('staff_started');$version=$r->session()->get('staff_version');
