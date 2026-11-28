@@ -352,13 +352,13 @@
   },
   "photos": {
     "hero": {
-      "path": "media/reference-landscape.webp",
-      "source": "https://commons.wikimedia.org/wiki/File:Landwirtschaft_im_Fayyum_Becken.jpg",
-      "credit": "Christian-wittmann-1964",
+      "path": "media/reference-flowers-field.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Chamomile_field.jpg",
+      "credit": "Dmytro Ivashchenko",
       "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
       "kind": "regional reference",
       "width": 1900,
-      "height": 1228,
+      "height": 1425,
       "modified": "Resized and converted to WebP; no compositional manipulation."
     },
     "editorial": {
@@ -383,6 +383,16 @@
     },
     "slides": [
       {
+        "path": "media/reference-landscape.webp",
+        "source": "https://commons.wikimedia.org/wiki/File:Landwirtschaft_im_Fayyum_Becken.jpg",
+        "credit": "Christian-wittmann-1964",
+        "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+        "kind": "regional reference",
+        "width": 1900,
+        "height": 1228,
+        "modified": "Resized and converted to WebP; no compositional manipulation."
+      },
+      {
         "path": "media/reference-field.webp",
         "source": "https://commons.wikimedia.org/wiki/File:Sun_flower_fields_at_Faiyom,_tounis_village.jpg",
         "credit": "Shady Elhakim",
@@ -390,16 +400,6 @@
         "kind": "regional reference",
         "width": 1166,
         "height": 1500,
-        "modified": "Resized and converted to WebP; no compositional manipulation."
-      },
-      {
-        "path": "media/reference-flowers-field.webp",
-        "source": "https://commons.wikimedia.org/wiki/File:Chamomile_field.jpg",
-        "credit": "Dmytro Ivashchenko",
-        "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
-        "kind": "regional reference",
-        "width": 1900,
-        "height": 1425,
         "modified": "Resized and converted to WebP; no compositional manipulation."
       },
       {
