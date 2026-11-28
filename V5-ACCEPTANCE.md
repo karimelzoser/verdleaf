@@ -13,3 +13,5 @@
 - Live Laravel/PHP/MySQL deployment, production buyer portal, real quotation approval, uploads, notifications and integrated real data. GitHub Pages cannot host these.
 - Complete crawlable production content, SEO launch, Arabic review, field Core Web Vitals, WCAG audit, independent penetration testing, backups and client UAT.
 - Acceptance requires recorded test evidence and client sign-off. No arbitrary claim of 100%.
+
+- Explicit synthetic public preview mode reflects demo-published product edits from the same browser tab. Ordinary public pages never use demo edits. Comparison includes botanical identity and plant part. Independent English/Arabic product HTML routes retain noindex.

@@ -8,3 +8,4 @@ header nav.shell{min-height:82px}header{background:#f6f5edfa}.brand img{width:86
 @media(prefers-reduced-motion:reduce){.living-hero *, .origin-art *, .global-story *{animation:none!important}.living-hero .living-photo{transform:none}.living-hero canvas{display:none}}
 
 .ambient-paused .origin-art img,.ambient-paused .origin-ring:after,.ambient-paused .global-orbits,.ambient-paused .origin-pulse,.ambient-paused .mini-season i,.ambient-paused .document-mark b{animation-play-state:paused!important}.static-product h2{font-size:2rem}
+.demo-mode-banner{background:#e2ecc9;color:#25442c;text-align:center;padding:9px;font-size:12px;border-bottom:1px solid #c6d7b5}.demo-mode-banner a{font-weight:700}.passport-demo{padding:12px;background:#e5eccf;border-radius:10px;margin:12px 0;font-size:13px}
