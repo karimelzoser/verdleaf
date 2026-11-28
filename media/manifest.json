@@ -348,6 +348,76 @@
       "width": 1100,
       "height": 825,
       "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "bay-leaves": {
+      "path": "media/reference-bay-leaves.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Dried_bay_leaves.jpg",
+      "credit": "Mauro Cateb",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 801,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "savory": {
+      "path": "media/reference-savory.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Bohnenkraut_(Saturea)_getrocknetes_Gew%C3%BCrzkraut.-Josef_Schlaghecken.jpg",
+      "credit": "Schlaghecken Josef",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1026,
+      "height": 900,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "cumin": {
+      "path": "media/reference-cumin.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Dried_cumin_seeds.jpg",
+      "credit": "Fumikas Sagisavas",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "kind": "botanical reference",
+      "width": 900,
+      "height": 900,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "ginger": {
+      "path": "media/reference-ginger.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Dry_ginger.jpg",
+      "credit": "Piyush Kothari",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 617,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "sunflower": {
+      "path": "media/reference-sunflower.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Sunflower_seeds.JPG",
+      "credit": "McLeod",
+      "license": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1065,
+      "height": 900,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "pumpkin-seeds": {
+      "path": "media/reference-pumpkin-seeds.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Pumpkin_seeds.jpg",
+      "credit": "IvanNedialkov Paparaka",
+      "license": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "kind": "botanical reference",
+      "width": 650,
+      "height": 900,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "watermelon-seeds": {
+      "path": "media/reference-watermelon-seeds.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Watermelon_seeds.jpg",
+      "credit": "KaoneChombo",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "kind": "botanical reference",
+      "width": 675,
+      "height": 900,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
     }
   },
   "photos": {
@@ -542,6 +612,76 @@
       "kind": "botanical reference",
       "width": 1100,
       "height": 825,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "bay-leaves": {
+      "path": "media/reference-bay-leaves.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Dried_bay_leaves.jpg",
+      "credit": "Mauro Cateb",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 801,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "savory": {
+      "path": "media/reference-savory.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Bohnenkraut_(Saturea)_getrocknetes_Gew%C3%BCrzkraut.-Josef_Schlaghecken.jpg",
+      "credit": "Schlaghecken Josef",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1026,
+      "height": 900,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "cumin": {
+      "path": "media/reference-cumin.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Dried_cumin_seeds.jpg",
+      "credit": "Fumikas Sagisavas",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "kind": "botanical reference",
+      "width": 900,
+      "height": 900,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "ginger": {
+      "path": "media/reference-ginger.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Dry_ginger.jpg",
+      "credit": "Piyush Kothari",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1100,
+      "height": 617,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "sunflower": {
+      "path": "media/reference-sunflower.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Sunflower_seeds.JPG",
+      "credit": "McLeod",
+      "license": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "kind": "botanical reference",
+      "width": 1065,
+      "height": 900,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "pumpkin-seeds": {
+      "path": "media/reference-pumpkin-seeds.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Pumpkin_seeds.jpg",
+      "credit": "IvanNedialkov Paparaka",
+      "license": "https://creativecommons.org/licenses/by-sa/3.0/deed.en",
+      "kind": "botanical reference",
+      "width": 650,
+      "height": 900,
+      "modified": "Resized and converted to WebP; no compositional manipulation."
+    },
+    "watermelon-seeds": {
+      "path": "media/reference-watermelon-seeds.webp",
+      "source": "https://commons.wikimedia.org/wiki/File:Watermelon_seeds.jpg",
+      "credit": "KaoneChombo",
+      "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "kind": "botanical reference",
+      "width": 675,
+      "height": 900,
       "modified": "Resized and converted to WebP; no compositional manipulation."
     }
   },
